@@ -1,1 +1,0 @@
-Visits a Smacc AST and builds up a new Smart-Ast 

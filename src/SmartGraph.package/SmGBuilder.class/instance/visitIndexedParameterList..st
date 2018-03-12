@@ -1,0 +1,3 @@
+visiting
+visitIndexedParameterList: aSolIndexedParameterListNode 
+	self visitParameterList: aSolIndexedParameterListNode

@@ -1,0 +1,3 @@
+accessing
+addUserModifier: aSmGUserModifierBind
+	userModifiers add: aSmGUserModifierBind

@@ -1,0 +1,3 @@
+visiting
+visitOperationCompare: aSolOperationCompareNode 
+	^ self manageCompareOperation: aSolOperationCompareNode

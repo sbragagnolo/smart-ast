@@ -1,0 +1,3 @@
+creating
+bytes
+	^ SmGBytes new 

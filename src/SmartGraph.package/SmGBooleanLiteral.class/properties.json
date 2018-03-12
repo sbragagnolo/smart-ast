@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "SmGLiteral",
+	"category" : "SmartGraph-nodes",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SmGBooleanLiteral",
+	"type" : "normal"
+}

@@ -1,0 +1,1 @@
+This tests ensure that all the names point to direct structure 

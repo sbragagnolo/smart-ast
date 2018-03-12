@@ -1,0 +1,3 @@
+visiting
+visitPlaceholderStatement: aSolPlaceholderStatementNode 
+	^ buildingStrategy createPlaceholder.

@@ -1,0 +1,3 @@
+visiting
+visitOperationAddition: aSolOperationAdditionNode 
+	^ self manageArithmeticBinaryOperation: aSolOperationAdditionNode

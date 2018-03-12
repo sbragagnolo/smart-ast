@@ -1,0 +1,3 @@
+accessing
+containedValue
+	^ value

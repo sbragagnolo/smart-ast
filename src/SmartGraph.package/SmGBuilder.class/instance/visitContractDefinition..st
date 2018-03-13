@@ -8,6 +8,6 @@ visitContractDefinition: aSolContractDefinitionNode
 	self assert: contract isNotNil.
 	stack first propertyAt: contract identifier put: contract.
 	stack push: contract.
-	self assert: aSolContractDefinitionNode inheritances size = 0.
+	contract inheritances: (aSolContractDefinitionNode inheritances acceptVisitor: self).
 	aSolContractDefinitionNode contract_sources acceptVisitor: self.
 	stack pop

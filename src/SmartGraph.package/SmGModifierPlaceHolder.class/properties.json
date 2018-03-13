@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "SmGNode",
-	"category" : "SmartGraph-builder",
+	"category" : "SmartGraph-nodes",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

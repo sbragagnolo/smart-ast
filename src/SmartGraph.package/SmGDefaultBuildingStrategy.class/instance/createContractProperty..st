@@ -1,5 +1,5 @@
 create property
 createContractProperty: aSmGIdentifier
-	^ SmGContractProperty new
+	^ SmGTypeProperty new
 		identifier: aSmGIdentifier;
 		yourself

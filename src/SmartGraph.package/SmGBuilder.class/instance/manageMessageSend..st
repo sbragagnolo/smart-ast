@@ -9,6 +9,6 @@ manageMessageSend: aSolTermExpressionNode
 	message
 		parent: stack first;
 		receiver: receiver;
-		selector: (identifiers last identifierForSelectorOf: arguments );
+		selector: ((identifiers last acceptVisitor: self) asSelectorIdentifier: buildingStrategy);
 		arguments: arguments.
 	^ message

@@ -5,7 +5,12 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"privacy",
+		"visibility",
+		"mutability",
+		"parameters"
+	],
 	"name" : "SmGAbstractMethod",
 	"type" : "normal"
 }

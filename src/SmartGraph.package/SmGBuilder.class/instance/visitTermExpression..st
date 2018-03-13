@@ -1,7 +1,7 @@
 visiting - term
 visitTermExpression: aSolTermExpressionNode
-	" Variable definition "
 
+	" Variable definition "
 	aSolTermExpressionNode opt_var_dec isNotNil
 		ifTrue: [ " It is not an array "
 			self assert: aSolTermExpressionNode opt_access exps size = 0.
@@ -9,6 +9,22 @@ visitTermExpression: aSolTermExpressionNode
 			self assert: aSolTermExpressionNode opt_var_dec isNotNil.
 			^ aSolTermExpressionNode opt_var_dec acceptVisitor: self ].
 
+	"Constructor"
+	(aSolTermExpressionNode opt_func_call isNotNil and: [ aSolTermExpressionNode factor isTypeName ])
+		ifTrue: [ self assert: aSolTermExpressionNode children size = 3.
+			" It is not an array "
+			self assert: aSolTermExpressionNode opt_access exps size = 0.
+			^ self manageConstructorCall: aSolTermExpressionNode ].
+	" Function call "
+	(aSolTermExpressionNode opt_func_call isNotNil and: [ aSolTermExpressionNode factor isLiteralIdentifier ])
+		ifTrue: [ |call|  self assert: aSolTermExpressionNode children size = 3.
+			" It is not an array "
+			self assert: aSolTermExpressionNode opt_access exps size = 0.
+			call := aSolTermExpressionNode opt_func_call acceptVisitor: self .
+			stack push: call. 
+			aSolTermExpressionNode nested_term acceptVisitor: self. 
+			
+			].
 	" Function call "
 	(aSolTermExpressionNode opt_func_call isNotNil and: [ aSolTermExpressionNode factor isLiteralIdentifier ])
 		ifTrue: [ self assert: aSolTermExpressionNode children size = 3.
@@ -31,14 +47,14 @@ visitTermExpression: aSolTermExpressionNode
 			^ aSolTermExpressionNode factor acceptVisitor: self ].
 
 
-	"  "
-
 	" Single access "
 	(aSolTermExpressionNode factor isLiteralIdentifier and: [ aSolTermExpressionNode opt_func_call isNil ])
 		ifTrue: [ | access |
 			self assert: aSolTermExpressionNode children size = 2.
 			access := self manageMemberAccess: (aSolTermExpressionNode factor acceptVisitor: self) to: stack first.
-			^ (aSolTermExpressionNode opt_access exps acceptVisitor: self) inject: access into: [ :context :subindex | self manageArrayAccess: context index: subindex ] ].
+			^ (aSolTermExpressionNode opt_access exps acceptVisitor: self)
+				inject: access
+				into: [ :context :subindex | self manageArrayAccess: context index: subindex ] ].
 
 	" It is not an array "
 	self assert: aSolTermExpressionNode opt_access exps size = 0.
@@ -47,5 +63,7 @@ visitTermExpression: aSolTermExpressionNode
 		ifTrue: [ self assert: aSolTermExpressionNode opt_access isNotNil.
 			self assert: aSolTermExpressionNode opt_access isNotNil.
 			self assert: aSolTermExpressionNode children size = 2.
-			^ aSolTermExpressionNode factor identifiers inject: stack first into: [ :context :identifier | self manageMemberAccess: (identifier acceptVisitor: self) to: context ] ].
+			^ aSolTermExpressionNode factor identifiers
+				inject: stack first
+				into: [ :context :identifier | self manageMemberAccess: (identifier acceptVisitor: self) to: context ] ].
 	self halt

@@ -4,5 +4,5 @@ visitOptionalVariableDeclaration: aSolOptionalVariableDeclarationNode
 	identifier := aSolOptionalVariableDeclarationNode identifier acceptVisitor: self.
 	type := aSolOptionalVariableDeclarationNode parent factor acceptVisitor: self.
 	variable := buildingStrategy createVariable: identifier type: type.
-	stack first propertyAt: identifier put: variable.
+	self currentContext propertyAt: identifier put: variable.
 	^ variable

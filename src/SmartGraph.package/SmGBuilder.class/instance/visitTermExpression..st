@@ -1,7 +1,7 @@
 visiting - term
 visitTermExpression: aSolTermExpressionNode
-
 	" Variable definition "
+
 	aSolTermExpressionNode opt_var_dec isNotNil
 		ifTrue: [ " It is not an array "
 			self assert: aSolTermExpressionNode opt_access exps size = 0.
@@ -10,30 +10,33 @@ visitTermExpression: aSolTermExpressionNode
 			^ aSolTermExpressionNode opt_var_dec acceptVisitor: self ].
 
 	"Constructor"
-	(aSolTermExpressionNode opt_func_call isNotNil and: [ aSolTermExpressionNode factor isTypeName ])
+	(aSolTermExpressionNode opt_func_call isNotNil
+		and: [ aSolTermExpressionNode factor isTypeName ])
 		ifTrue: [ self assert: aSolTermExpressionNode children size = 3.
 			" It is not an array "
 			self assert: aSolTermExpressionNode opt_access exps size = 0.
 			^ self manageConstructorCall: aSolTermExpressionNode ].
 	" Function call "
-	(aSolTermExpressionNode opt_func_call isNotNil and: [ aSolTermExpressionNode factor isLiteralIdentifier ])
-		ifTrue: [ |call|  self assert: aSolTermExpressionNode children size = 3.
+	(aSolTermExpressionNode opt_func_call isNotNil
+		and: [ aSolTermExpressionNode factor isLiteralIdentifier ])
+		ifTrue: [ | call |
+			self assert: aSolTermExpressionNode children size = 3.
 			" It is not an array "
 			self assert: aSolTermExpressionNode opt_access exps size = 0.
-			call := aSolTermExpressionNode opt_func_call acceptVisitor: self .
-			stack push: call. 
-			aSolTermExpressionNode nested_term acceptVisitor: self. 
-			
-			].
+			call := aSolTermExpressionNode opt_func_call acceptVisitor: self.
+
+			aSolTermExpressionNode nested_term ifNotNil: [ self halt. ].].
 	" Function call "
-	(aSolTermExpressionNode opt_func_call isNotNil and: [ aSolTermExpressionNode factor isLiteralIdentifier ])
+	(aSolTermExpressionNode opt_func_call isNotNil
+		and: [ aSolTermExpressionNode factor isLiteralIdentifier ])
 		ifTrue: [ self assert: aSolTermExpressionNode children size = 3.
 			" It is not an array "
 			self assert: aSolTermExpressionNode opt_access exps size = 0.
 			^ aSolTermExpressionNode opt_func_call acceptVisitor: self ].
 
 	" Message send "
-	(aSolTermExpressionNode opt_func_call isNotNil and: [ aSolTermExpressionNode factor isNestedIdentifier ])
+	(aSolTermExpressionNode opt_func_call isNotNil
+		and: [ aSolTermExpressionNode factor isNestedIdentifier ])
 		ifTrue: [ self assert: aSolTermExpressionNode children size = 3.
 			" It is not an array "
 			self assert: aSolTermExpressionNode opt_access exps size = 0.
@@ -48,10 +51,13 @@ visitTermExpression: aSolTermExpressionNode
 
 
 	" Single access "
-	(aSolTermExpressionNode factor isLiteralIdentifier and: [ aSolTermExpressionNode opt_func_call isNil ])
+	(aSolTermExpressionNode factor isLiteralIdentifier
+		and: [ aSolTermExpressionNode opt_func_call isNil ])
 		ifTrue: [ | access |
 			self assert: aSolTermExpressionNode children size = 2.
-			access := self manageMemberAccess: (aSolTermExpressionNode factor acceptVisitor: self) to: stack first.
+			access := self
+				manageMemberAccess: (aSolTermExpressionNode factor acceptVisitor: self)
+				to: self currentContext.
 			^ (aSolTermExpressionNode opt_access exps acceptVisitor: self)
 				inject: access
 				into: [ :context :subindex | self manageArrayAccess: context index: subindex ] ].
@@ -64,6 +70,7 @@ visitTermExpression: aSolTermExpressionNode
 			self assert: aSolTermExpressionNode opt_access isNotNil.
 			self assert: aSolTermExpressionNode children size = 2.
 			^ aSolTermExpressionNode factor identifiers
-				inject: stack first
-				into: [ :context :identifier | self manageMemberAccess: (identifier acceptVisitor: self) to: context ] ].
+				inject: self currentContext
+				into:
+					[ :context :identifier | self manageMemberAccess: (identifier acceptVisitor: self) to: context ] ].
 	self halt

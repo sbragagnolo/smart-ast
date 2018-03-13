@@ -5,5 +5,5 @@ visitOperationTernary: aSolOperationTernaryNode
 	ifTrue := aSolOperationTernaryNode then_statement acceptVisitor: self.
 	ifFalse := aSolOperationTernaryNode else_statement acceptVisitor: self.
 	ifStatement := buildingStrategy createStatementIf: condition ifTrue: ifTrue ifFalse: ifFalse.
-	ifStatement parent: stack first.
+	ifStatement parent: self currentContext.
 	^ ifStatement

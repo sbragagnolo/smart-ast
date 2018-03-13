@@ -1,4 +1,4 @@
-creating
+visiting
 visitOperationNotEquals: aSolOperationNotEqualsNode 
 	| or left right |
 	left := aSolOperationNotEqualsNode lhs_exp acceptVisitor: self.

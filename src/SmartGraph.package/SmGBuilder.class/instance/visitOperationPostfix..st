@@ -1,4 +1,4 @@
-creating
+visiting
 visitOperationPostfix: aSolOperationPostfixNode 
 	| operation |
 	operation := buildingStrategy createPostfixOperation: aSolOperationPostfixNode operation value.

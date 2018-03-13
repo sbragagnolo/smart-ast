@@ -1,3 +1,3 @@
-as yet unclassified
+visiting
 visitExpressionList: aSolExpressionListNode
 	^ aSolExpressionListNode exps acceptVisitor: self

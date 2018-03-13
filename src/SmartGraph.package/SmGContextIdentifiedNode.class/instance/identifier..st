@@ -1,3 +1,3 @@
 accessing
-identifier: aSmGIdentifier 
+identifier: aSmGIdentifier
 	identifier := aSmGIdentifier

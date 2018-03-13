@@ -1,10 +1,10 @@
 visiting
 visitFallbackFunctionDefinition: aSolFallbackFunctionDefinitionNode
 	| method |
-	method := buildingStrategy createFallbackMethod: stack first identifier.
-	stack first propertyAt: method identifier put: method.
-	stack push: method.
-	aSolFallbackFunctionDefinitionNode modifiers acceptVisitor: self.
-	aSolFallbackFunctionDefinitionNode block ifNotNil: [ method block: (self manageBlock: aSolFallbackFunctionDefinitionNode block) ].
-	stack pop.
+	method := buildingStrategy createFallbackMethod: self currentContext identifier.
+	self currentContext propertyAt: method identifier put: method.
+	self
+		using: method
+		define: [ aSolFallbackFunctionDefinitionNode modifiers acceptVisitor: self.
+			aSolFallbackFunctionDefinitionNode block ifNotNil: [ method body: (aSolFallbackFunctionDefinitionNode block acceptVisitor: self) ] ].
 	^ method

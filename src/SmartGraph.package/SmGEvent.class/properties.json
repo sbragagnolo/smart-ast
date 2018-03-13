@@ -5,7 +5,9 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"parameters"
+	],
 	"name" : "SmGEvent",
 	"type" : "normal"
 }

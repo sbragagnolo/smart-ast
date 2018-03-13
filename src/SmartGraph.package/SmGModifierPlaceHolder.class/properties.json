@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "SmGNode",
+	"super" : "SmGContextualNode",
 	"category" : "SmartGraph-nodes",
 	"classinstvars" : [ ],
 	"pools" : [ ],

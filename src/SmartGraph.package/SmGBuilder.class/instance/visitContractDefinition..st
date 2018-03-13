@@ -6,8 +6,9 @@ visitContractDefinition: aSolContractDefinitionNode
 	aSolContractDefinitionNode definition_type value = #library
 		ifTrue: [ contract := buildingStrategy createLibrary: (aSolContractDefinitionNode contract_id acceptVisitor: self) ].
 	self assert: contract isNotNil.
-	stack first propertyAt: contract identifier put: contract.
-	stack push: contract.
-	contract inheritances: (aSolContractDefinitionNode inheritances acceptVisitor: self).
-	aSolContractDefinitionNode contract_sources acceptVisitor: self.
-	stack pop
+	self currentContext propertyAt: contract identifier put: contract.
+	self
+		using: contract
+		define: [ aSolContractDefinitionNode definition_type value = #contract
+				ifTrue: [ contract inheritances: (aSolContractDefinitionNode inheritances acceptVisitor: self) ].
+			aSolContractDefinitionNode contract_sources acceptVisitor: self ]

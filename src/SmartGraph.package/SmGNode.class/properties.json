@@ -6,7 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"properties",
 		"parent"
 	],
 	"name" : "SmGNode",

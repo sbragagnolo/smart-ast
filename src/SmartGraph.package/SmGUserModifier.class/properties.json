@@ -1,12 +1,12 @@
 {
 	"commentStamp" : "",
-	"super" : "SmGIdentifiedNode",
+	"super" : "SmGContextIdentifiedNode",
 	"category" : "SmartGraph-nodes",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"block"
+		"body"
 	],
 	"name" : "SmGUserModifier",
 	"type" : "normal"

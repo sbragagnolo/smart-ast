@@ -6,8 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"body"
+		"properties"
 	],
-	"name" : "SmGBlock",
+	"name" : "SmGContextualNode",
 	"type" : "normal"
 }

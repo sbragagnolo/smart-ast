@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "SmGNode",
+	"category" : "SmartGraph-builder",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"values"
+	],
+	"name" : "SmGTuple",
+	"type" : "normal"
+}

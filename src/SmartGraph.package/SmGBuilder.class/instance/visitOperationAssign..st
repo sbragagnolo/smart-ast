@@ -1,4 +1,4 @@
-visiting
+visiting operations
 visitOperationAssign: aSolOperationAssignNode
 	| left right assignment op |
 	left := aSolOperationAssignNode lhs_exp acceptVisitor: self.

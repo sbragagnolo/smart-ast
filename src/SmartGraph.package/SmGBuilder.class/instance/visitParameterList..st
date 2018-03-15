@@ -1,4 +1,4 @@
-visiting
+visiting - functions
 visitParameterList: aSolParameterListNode
 	| params |
 	aSolParameterListNode types size = aSolParameterListNode identifiers size

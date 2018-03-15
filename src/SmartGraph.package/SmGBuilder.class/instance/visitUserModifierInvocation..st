@@ -1,4 +1,4 @@
-visiting
+visiting - modifier
 visitUserModifierInvocation: aSolUserModifierInvocationNode
 	^ self currentContext
 		addUserModifier:

@@ -1,0 +1,3 @@
+creating
+createWhileStatement
+	^ SmGWhileStatement new 

@@ -1,4 +1,4 @@
-visiting
+visiting - functions
 visitOptionalFunctionCall: aSolOptionalFunctionCallNode
 	| identifier call arguments |
 	arguments := aSolOptionalFunctionCallNode func_args acceptVisitor: self.

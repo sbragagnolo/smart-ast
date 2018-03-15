@@ -1,4 +1,4 @@
-visiting
+visiting - modifier
 visitUserModifierDefinition: aSolUserModifierDefinitionNode
 	| modifier identifier |
 	identifier := aSolUserModifierDefinitionNode identifier acceptVisitor: self.

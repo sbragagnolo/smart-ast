@@ -1,4 +1,4 @@
-visiting
+visiting types
 visitEventDefinition: aSolEventDefinitionNode
 	| identifier event |
 	identifier := aSolEventDefinitionNode event_id acceptVisitor: self.

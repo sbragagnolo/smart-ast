@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "SmGContextualNode",
+	"category" : "SmartGraph-nodes",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"condition",
+		"body"
+	],
+	"name" : "SmGWhileStatement",
+	"type" : "normal"
+}

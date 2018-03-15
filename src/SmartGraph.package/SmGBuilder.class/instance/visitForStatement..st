@@ -1,4 +1,4 @@
-visiting
+visit statement
 visitForStatement: aSolForStatementNode
 	| initialize condition loopExpressions body for |
 	for := buildingStrategy createForStatement.

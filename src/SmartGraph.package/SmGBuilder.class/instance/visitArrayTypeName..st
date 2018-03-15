@@ -1,4 +1,4 @@
-visiting
+visiting types
 visitArrayTypeName: aSolArrayTypeNameNode
 	| innerType type identifier bind |
 	innerType := aSolArrayTypeNameNode type acceptVisitor: self.

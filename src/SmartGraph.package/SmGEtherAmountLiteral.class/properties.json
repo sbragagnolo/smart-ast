@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "SmGLiteral",
+	"category" : "SmartGraph-nodes",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"unit"
+	],
+	"name" : "SmGEtherAmountLiteral",
+	"type" : "normal"
+}

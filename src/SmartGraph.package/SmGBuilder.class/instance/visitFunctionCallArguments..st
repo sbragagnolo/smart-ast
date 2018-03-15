@@ -1,3 +1,3 @@
-visiting
+visiting - functions
 visitFunctionCallArguments: aSolFunctionCallArgumentsNode
 	^ aSolFunctionCallArgumentsNode exp_list acceptVisitor: self

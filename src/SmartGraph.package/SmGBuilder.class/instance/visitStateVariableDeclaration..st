@@ -1,4 +1,4 @@
-visiting
+visiting  contract
 visitStateVariableDeclaration: aSolStateVariableDeclarationNode
 	| property type id initialValue |
 	self assert: self currentContext isContract.

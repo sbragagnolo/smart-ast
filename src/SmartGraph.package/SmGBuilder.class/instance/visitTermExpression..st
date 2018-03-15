@@ -1,76 +1,31 @@
 visiting - term
 visitTermExpression: aSolTermExpressionNode
+	| term prev |
 	" Variable definition "
-
-	aSolTermExpressionNode opt_var_dec isNotNil
-		ifTrue: [ " It is not an array "
-			self assert: aSolTermExpressionNode opt_access exps size = 0.
-			self assert: aSolTermExpressionNode children size = 3.
-			self assert: aSolTermExpressionNode opt_var_dec isNotNil.
-			^ aSolTermExpressionNode opt_var_dec acceptVisitor: self ].
-
+	(self termIsVariableDefinition: aSolTermExpressionNode)
+		ifTrue: [ term := self manageVariableDefinition: aSolTermExpressionNode ].
 	"Constructor"
-	(aSolTermExpressionNode opt_func_call isNotNil
-		and: [ aSolTermExpressionNode factor isTypeName ])
-		ifTrue: [ self assert: aSolTermExpressionNode children size = 3.
-			" It is not an array "
-			self assert: aSolTermExpressionNode opt_access exps size = 0.
-			^ self manageConstructorCall: aSolTermExpressionNode ].
-	" Function call "
-	(aSolTermExpressionNode opt_func_call isNotNil
-		and: [ aSolTermExpressionNode factor isLiteralIdentifier ])
-		ifTrue: [ | call |
-			self assert: aSolTermExpressionNode children size = 3.
-			" It is not an array "
-			self assert: aSolTermExpressionNode opt_access exps size = 0.
-			call := aSolTermExpressionNode opt_func_call acceptVisitor: self.
-
-			aSolTermExpressionNode nested_term ifNotNil: [ self halt. ].].
-	" Function call "
-	(aSolTermExpressionNode opt_func_call isNotNil
-		and: [ aSolTermExpressionNode factor isLiteralIdentifier ])
-		ifTrue: [ self assert: aSolTermExpressionNode children size = 3.
-			" It is not an array "
-			self assert: aSolTermExpressionNode opt_access exps size = 0.
-			^ aSolTermExpressionNode opt_func_call acceptVisitor: self ].
-
-	" Message send "
-	(aSolTermExpressionNode opt_func_call isNotNil
-		and: [ aSolTermExpressionNode factor isNestedIdentifier ])
-		ifTrue: [ self assert: aSolTermExpressionNode children size = 3.
-			" It is not an array "
-			self assert: aSolTermExpressionNode opt_access exps size = 0.
-			^ self manageMessageSend: aSolTermExpressionNode ].
-
+	(term isNil and: [ self termIsConstructor: aSolTermExpressionNode ])
+		ifTrue: [ term := self manageConstructorCall: aSolTermExpressionNode ].
+	" Function call / Message send "
+	(term isNil and: [ (self termIsFunctionCall: aSolTermExpressionNode) or: [ self termIsMessageSend: aSolTermExpressionNode ] ])
+		ifTrue: [ prev := 0.
+			term := self manageMessageSend: aSolTermExpressionNode ].
 	" Just literal access "
-	aSolTermExpressionNode factor isLiteralValue
-		ifTrue: [ " It is not an array "
-			self assert: aSolTermExpressionNode opt_access exps size = 0.
-			self assert: aSolTermExpressionNode children size = 2.
-			^ aSolTermExpressionNode factor acceptVisitor: self ].
-
-
+	(term isNil and: [ self termIsLiteralAccess: aSolTermExpressionNode ])
+		ifTrue: [ term := self manageLiteralAccess: aSolTermExpressionNode ].
 	" Single access "
-	(aSolTermExpressionNode factor isLiteralIdentifier
-		and: [ aSolTermExpressionNode opt_func_call isNil ])
-		ifTrue: [ | access |
-			self assert: aSolTermExpressionNode children size = 2.
-			access := self
-				manageMemberAccess: (aSolTermExpressionNode factor acceptVisitor: self)
-				to: self currentContext.
-			^ (aSolTermExpressionNode opt_access exps acceptVisitor: self)
-				inject: access
-				into: [ :context :subindex | self manageArrayAccess: context index: subindex ] ].
-
-	" It is not an array "
-	self assert: aSolTermExpressionNode opt_access exps size = 0.
+	(term isNil and: [ self termIsSingleAccess: aSolTermExpressionNode ])
+		ifTrue: [ term := self manageSingleAccess: aSolTermExpressionNode ].
 	" Cascade access "
-	aSolTermExpressionNode factor isNestedIdentifier
-		ifTrue: [ self assert: aSolTermExpressionNode opt_access isNotNil.
-			self assert: aSolTermExpressionNode opt_access isNotNil.
-			self assert: aSolTermExpressionNode children size = 2.
-			^ aSolTermExpressionNode factor identifiers
-				inject: self currentContext
-				into:
-					[ :context :identifier | self manageMemberAccess: (identifier acceptVisitor: self) to: context ] ].
-	self halt
+	(term isNil and: [ self termIsCascadeAccess: aSolTermExpressionNode ])
+		ifTrue: [ term := self manageCascadeAccess: aSolTermExpressionNode ].
+
+	" Nested term management "
+	(term isNotNil and: [ self termAccessesReturningExpression: aSolTermExpressionNode ])
+		ifTrue: [ self assert: prev = 0.
+			self using: term define: [ term := aSolTermExpressionNode nested_term acceptVisitor: self ] ].
+	(term isNotNil and: [ self termExecutesReturningExpression: aSolTermExpressionNode ])
+		ifTrue: [ term := self manageExecute: term asFunctionWith: aSolTermExpressionNode nested_func_call ].
+	term ifNil: [ self halt ].
+	^ term

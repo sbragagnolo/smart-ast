@@ -1,4 +1,4 @@
-visit if
+visit statement
 visitOperationTernary: aSolOperationTernaryNode
 	| ifStatement condition ifTrue ifFalse |
 	condition := aSolOperationTernaryNode test_exp acceptVisitor: self.

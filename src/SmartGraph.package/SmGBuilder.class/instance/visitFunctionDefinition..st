@@ -1,4 +1,4 @@
-visiting
+visiting - functions
 visitFunctionDefinition: aSolFunctionDefinitionNode
 	| method identifier |
 	identifier := (aSolFunctionDefinitionNode identifier acceptVisitor: self) asSelectorIdentifier: buildingStrategy.

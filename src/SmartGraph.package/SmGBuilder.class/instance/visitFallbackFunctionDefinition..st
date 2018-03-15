@@ -1,4 +1,4 @@
-visiting
+visiting - functions
 visitFallbackFunctionDefinition: aSolFallbackFunctionDefinitionNode
 	| method |
 	method := buildingStrategy createFallbackMethod: self currentContext identifier.

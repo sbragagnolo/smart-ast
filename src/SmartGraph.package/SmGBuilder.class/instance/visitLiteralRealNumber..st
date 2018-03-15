@@ -1,0 +1,3 @@
+visiting literals
+visitLiteralRealNumber: aSolLiteralRealNumberNode
+	^ buildingStrategy createRealLiteral: aSolLiteralRealNumberNode value value asNumber

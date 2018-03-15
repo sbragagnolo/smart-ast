@@ -1,4 +1,4 @@
-visiting
+visiting operations
 visitOperationEquals: aSolOperationEqualsNode
 	| or left right |
 	left := aSolOperationEqualsNode lhs_exp acceptVisitor: self.

@@ -1,4 +1,4 @@
-visiting
+visiting - functions
 visitOptionalVariableDeclaration: aSolOptionalVariableDeclarationNode
 	| identifier variable type |
 	identifier := aSolOptionalVariableDeclarationNode identifier acceptVisitor: self.

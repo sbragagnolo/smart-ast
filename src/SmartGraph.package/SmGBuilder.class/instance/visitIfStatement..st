@@ -1,4 +1,4 @@
-visiting
+visit statement
 visitIfStatement: aSolIfStatementNode
 	| ifStatement condition ifTrue ifFalse |
 	condition := aSolIfStatementNode exp_test acceptVisitor: self.

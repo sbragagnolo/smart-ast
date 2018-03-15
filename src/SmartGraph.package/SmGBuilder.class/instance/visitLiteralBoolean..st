@@ -1,4 +1,4 @@
-visiting
+visiting - literals
 visitLiteralBoolean: aSolLiteralBooleanNode 
 	| value |
 	aSolLiteralBooleanNode value value = #false ifTrue: [  value := false  ].

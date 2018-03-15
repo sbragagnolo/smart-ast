@@ -1,4 +1,4 @@
-visiting
+visiting types
 visitContractDefinition: aSolContractDefinitionNode
 	| contract |
 	aSolContractDefinitionNode definition_type value = #contract

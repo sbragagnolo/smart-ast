@@ -6,7 +6,8 @@ visitTermExpression: aSolTermExpressionNode
 		ifTrue: [ term := self manageVariableDefinition: aSolTermExpressionNode ].
 	"Constructor"
 	(term isNil and: [ self termIsConstructor: aSolTermExpressionNode ])
-		ifTrue: [ term := self manageConstructorCall: aSolTermExpressionNode ].
+		ifTrue: [ prev := 0.
+			term := self manageConstructorCall: aSolTermExpressionNode ].
 	" Function call / Message send "
 	(term isNil and: [ (self termIsFunctionCall: aSolTermExpressionNode) or: [ self termIsMessageSend: aSolTermExpressionNode ] ])
 		ifTrue: [ prev := 0.

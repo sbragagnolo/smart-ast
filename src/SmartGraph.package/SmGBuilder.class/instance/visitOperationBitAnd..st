@@ -1,0 +1,3 @@
+visiting
+visitOperationBitAnd: aSolOperationBitAndNode 
+	^ self manageCompareOperation: aSolOperationBitAndNode

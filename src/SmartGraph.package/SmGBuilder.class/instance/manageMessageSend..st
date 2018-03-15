@@ -11,6 +11,6 @@ manageMessageSend: aSolTermExpressionNode
 	message
 		parent: self currentContext;
 		receiver: receiver;
-		selector: ((identifiers last acceptVisitor: self) asSelectorIdentifier: buildingStrategy);
+		selector: ((identifiers last acceptVisitor: self) asSelectorIdentifier: buildingStrategy parameters: arguments);
 		arguments: arguments.
 	^ message

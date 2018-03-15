@@ -1,3 +1,3 @@
 printing
 kind
-	 ^ 'SELECTOR_ID'
+	 ^ '#SELECTOR_ID'

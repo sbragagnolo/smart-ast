@@ -1,3 +1,3 @@
 printing
 kind 
-	^ 'ARRAY_ID'
+	^ #'ARRAY_ID'

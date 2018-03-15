@@ -1,3 +1,3 @@
 creating asm
 createAsmAssignment
-	^ SmGASMAssignement new. 
+	^ SmGAsmAssignement new. 

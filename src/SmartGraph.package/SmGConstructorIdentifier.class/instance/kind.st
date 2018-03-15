@@ -1,3 +1,3 @@
 printing
 kind 
-	^ 'CONSTRUCTOR_ID'
+	^ #'CONSTRUCTOR_ID'

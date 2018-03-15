@@ -1,3 +1,3 @@
-conversions
+converting
 asConstructorIdentifier: aSmGDefaultBuildingStrategy 
 	^ aSmGDefaultBuildingStrategy createConstructorIdentifier: value

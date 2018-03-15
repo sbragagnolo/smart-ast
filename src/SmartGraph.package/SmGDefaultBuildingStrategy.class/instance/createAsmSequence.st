@@ -1,3 +1,3 @@
 creating asm
 createAsmSequence
-	^ SmGASMSequence new 
+	^ SmGAsmSequence new 

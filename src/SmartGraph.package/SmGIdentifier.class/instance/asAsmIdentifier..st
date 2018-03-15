@@ -1,0 +1,3 @@
+converting
+asAsmIdentifier: aSmGDefaultBuildingStrategy
+	^ aSmGDefaultBuildingStrategy createAsmIdentifier: value

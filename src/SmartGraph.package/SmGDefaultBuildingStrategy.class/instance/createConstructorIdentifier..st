@@ -1,4 +1,4 @@
-create idenfieir
+create identifier
 createConstructorIdentifier: aString 
 	| name |
 	name := '{1}>>{1}' format: {aString}.

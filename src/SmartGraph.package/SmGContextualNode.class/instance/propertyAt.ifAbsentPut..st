@@ -1,3 +1,8 @@
 accessing
 propertyAt: aSmGIdentifier ifAbsentPut: aBlockClosure
-	^ properties at: aSmGIdentifier ifAbsent: [ self propertyAt: aSmGIdentifier put: aBlockClosure value ]
+	^ properties
+		at: aSmGIdentifier
+		ifAbsent: [ | value |
+			value := aBlockClosure value.
+			self propertyAt: aSmGIdentifier put: value.
+			value ]

@@ -2,6 +2,7 @@ visiting  contract
 visitStateVariableDeclaration: aSolStateVariableDeclarationNode
 	| property type id initialValue |
 	self assert: self currentContext isContract.
+
 	id := aSolStateVariableDeclarationNode identifier acceptVisitor: self.
 	property := buildingStrategy createContractProperty: id.
 	property parent: self currentContext.

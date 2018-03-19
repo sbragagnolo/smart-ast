@@ -1,4 +1,5 @@
 printing
 printOn: aStream
 	type printOn: aStream.
-	super printOn: aStream
+	aStream nextPutAll: ' '.
+	identifier printOn: aStream

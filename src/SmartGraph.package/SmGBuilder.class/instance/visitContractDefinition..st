@@ -1,4 +1,4 @@
-visiting types
+visiting  contract
 visitContractDefinition: aSolContractDefinitionNode
 	| contract |
 	aSolContractDefinitionNode definition_type value = #contract
@@ -9,6 +9,7 @@ visitContractDefinition: aSolContractDefinitionNode
 	self currentContext propertyAt: contract identifier put: contract.
 	self
 		using: contract
-		define: [ aSolContractDefinitionNode definition_type value = #contract
+		define: [ self currentContext propertyAt: buildingStrategy createSelfIdentifier put: contract.
+			aSolContractDefinitionNode definition_type value = #contract
 				ifTrue: [ contract inheritances: (aSolContractDefinitionNode inheritances acceptVisitor: self) ].
 			aSolContractDefinitionNode contract_sources acceptVisitor: self ]

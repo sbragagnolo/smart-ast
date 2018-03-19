@@ -1,0 +1,3 @@
+querying
+assignmentType
+	^ self type

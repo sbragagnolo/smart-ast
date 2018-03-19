@@ -1,4 +1,4 @@
-visiting
+visiting literals
 visitLiteralEtherAmount: aSolLiteralEtherAmountNode
 	| amount |
 	amount := buildingStrategy createEtherLiteral.

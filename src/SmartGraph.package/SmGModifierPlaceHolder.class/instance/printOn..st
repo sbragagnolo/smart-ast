@@ -1,3 +1,3 @@
 printing
 printOn: aStream
-	aStream nextPutAll: ' _ '.
+	aStream nextPutAll: ' PlaceHolder '.

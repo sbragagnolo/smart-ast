@@ -1,10 +1,7 @@
 printing
 printOn: aStream
-	('for({1} ; {2} ; {3}) \{
-		{4}
-	\}'
+	('for({1} ; {2} ; {3})'
 		format:
 			{initialize printString.
 			condition printString.
-			loopExpressions printString.
-			body printString}) printOn: aStream
+			loopExpressions printString}) printOn: aStream

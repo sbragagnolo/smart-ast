@@ -1,0 +1,3 @@
+querying
+assignmentType
+	^ array property assignmentType innerTypeAssingmentType

@@ -1,0 +1,3 @@
+*SmartGraph
+assignmentType
+	^ self 

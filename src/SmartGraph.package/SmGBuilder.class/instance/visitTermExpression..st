@@ -1,8 +1,11 @@
 visiting - term
 visitTermExpression: aSolTermExpressionNode
 	| term prev |
+	aSolTermExpressionNode factor isArray
+		ifTrue: [ aSolTermExpressionNode factor: (aSolTermExpressionNode factor at: 2) ].
+
 	" Variable definition "
-	(self termIsVariableDefinition: aSolTermExpressionNode)
+	(term isNil and: [ self termIsVariableDefinition: aSolTermExpressionNode ])
 		ifTrue: [ term := self manageVariableDefinition: aSolTermExpressionNode ].
 	"Constructor"
 	(term isNil and: [ self termIsConstructor: aSolTermExpressionNode ])

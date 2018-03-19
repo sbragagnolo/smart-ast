@@ -1,3 +1,3 @@
-visiting
+visiting operations
 visitOperationBitAnd: aSolOperationBitAndNode 
-	^ self manageCompareOperation: aSolOperationBitAndNode
+	^ self manageBooleanBinaryOperation: aSolOperationBitAndNode 

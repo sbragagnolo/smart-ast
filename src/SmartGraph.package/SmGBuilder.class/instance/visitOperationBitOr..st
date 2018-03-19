@@ -1,0 +1,3 @@
+visiting operations
+visitOperationBitOr: aSolOperationBitOrNode 
+	^ self manageBooleanBinaryOperation: aSolOperationBitOrNode

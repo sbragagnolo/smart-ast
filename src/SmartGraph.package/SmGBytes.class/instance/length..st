@@ -1,3 +1,3 @@
-accessing
+lengthed type
 length: anInteger 
 	length := anInteger

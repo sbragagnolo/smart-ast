@@ -1,0 +1,3 @@
+creating
+createWildcardTypeBind
+	^ SmGWildcardTypeBind new

@@ -6,7 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"innerType"
+		"innerType",
+		"length"
 	],
 	"name" : "SmGArrayType",
 	"type" : "normal"

@@ -1,0 +1,3 @@
+visiting
+visitLiteralHexaString: aSolLiteralHexaStringNode
+	^ buildingStrategy createHexaStringLiteral: aSolLiteralHexaStringNode value value

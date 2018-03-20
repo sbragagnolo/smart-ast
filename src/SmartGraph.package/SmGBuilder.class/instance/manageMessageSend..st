@@ -7,9 +7,7 @@ manageMessageSend: aSolTermExpressionNode
 			self assert: aSolTermExpressionNode opt_access children size = 2.
 			self assert: aSolTermExpressionNode opt_access id_member_accesses size = 1.
 			self assert: aSolTermExpressionNode opt_access exps size = 1.
-			receiver := aSolTermExpressionNode factor identifiers
-				inject: self currentContext
-				into: [ :context :identifier | self manageMemberAccess: (identifier acceptVisitor: self) to: context ].
+			receiver := aSolTermExpressionNode factor identifiers inject: self currentContext into: [ :context :identifier | self manageMemberAccess: (identifier acceptVisitor: self) to: context ].
 			receiver := self manageArrayAccess: receiver index: (aSolTermExpressionNode opt_access exps acceptVisitor: self) first.
 			self assert: aSolTermExpressionNode opt_func_call children size = 1.
 			arguments := aSolTermExpressionNode opt_func_call func_args acceptVisitor: self.
@@ -21,7 +19,11 @@ manageMessageSend: aSolTermExpressionNode
 				arguments: arguments.
 			^ message ]
 		ifFalse: [ | identifiers |
-			identifiers := aSolTermExpressionNode factor identifiers.
+			identifiers := aSolTermExpressionNode factor isLiteralValue
+				ifTrue: [ self assert: aSolTermExpressionNode opt_access id_member_accesses size = 1.
+					{aSolTermExpressionNode factor.
+					aSolTermExpressionNode opt_access id_member_accesses first} ]
+				ifFalse: [ aSolTermExpressionNode factor identifiers ].
 			receiver := identifiers allButLast inject: self currentContext into: [ :context :identifier | self manageMemberAccess: (identifier acceptVisitor: self) to: context ].
 			receiver = self currentContext
 				ifTrue: [ receiver := buildingStrategy createSelfIdentifier ].

@@ -1,8 +1,8 @@
 visiting - functions
 visitParameterList: aSolParameterListNode
-	| params |
-	aSolParameterListNode types size = aSolParameterListNode identifiers size
-		ifTrue: [ ^ self processTypedAndNamedParameters: aSolParameterListNode ].
-	(aSolParameterListNode types size > 0 and: [ aSolParameterListNode identifiers size = 0 ])
-		ifTrue: [ ^ self processTypedAndUnnamedParameters: aSolParameterListNode  ].
-	self halt
+	^ (1 to: aSolParameterListNode parameters size)
+		collect: [ :idx | 
+			| param |
+			param := (aSolParameterListNode parameters at: idx) acceptVisitor: self.
+			param identifier ifNil: [ param identifier: (buildingStrategy createIdentifierFromSymbol: ('gen_' , idx asString) asSymbol) ].
+			param ]

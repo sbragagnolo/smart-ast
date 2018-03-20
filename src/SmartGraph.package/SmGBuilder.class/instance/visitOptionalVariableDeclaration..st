@@ -10,7 +10,17 @@ visitOptionalVariableDeclaration: aSolOptionalVariableDeclarationNode
 				into: [ :acc :each | buildingStrategy createTypeBind: each context: acc ] ]
 		ifFalse: [ type := aSolOptionalVariableDeclarationNode parent factor acceptVisitor: self ].
 	aSolOptionalVariableDeclarationNode parent opt_access exps size = 1
-		ifTrue: [ type length: (aSolOptionalVariableDeclarationNode parent opt_access exps first acceptVisitor: self) ].
+		ifTrue: [ " This is an array type definition "
+			| arrayID arrayType |
+			arrayID := type identifier asArrayIdentifierAt: buildingStrategy.
+			arrayType := buildingStrategy createTypeBind: arrayID context: self currentContext.
+			arrayType lookupValue
+				ifNil: [ type := buildingStrategy createArrayType: arrayID.
+					arrayType innerType: type.
+					arrayType parent: type lookupValue parent.
+					arrayType parent propertyAt: arrayType identifier put: arrayType ].
+			type := arrayType.
+			type length: (aSolOptionalVariableDeclarationNode parent opt_access exps first acceptVisitor: self) ].
 	variable := buildingStrategy createVariable: identifier type: type.
 	self currentContext propertyAt: identifier put: variable.
 	^ variable

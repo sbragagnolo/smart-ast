@@ -6,7 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"type"
+		"type",
+		"storageLocation"
 	],
 	"name" : "SmGParameter",
 	"type" : "normal"

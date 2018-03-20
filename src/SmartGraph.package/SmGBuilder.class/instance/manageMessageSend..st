@@ -3,11 +3,13 @@ manageMessageSend: aSolTermExpressionNode
 	| receiver message arguments |
 	self assert: (aSolTermExpressionNode children size = 3 or: [ aSolTermExpressionNode children size = 4 ]).
 	(self isArrayAccess: aSolTermExpressionNode)
-		ifTrue: [ " In this case we are having something like var[_sub].fn(...) "
+		ifTrue: [ " In this case we are having something like var[_sub].fn(...), or var.var2.fn(...) "
+			| thing |
 			self assert: aSolTermExpressionNode opt_access children size = 2.
-			self assert: aSolTermExpressionNode opt_access id_member_accesses size = 1.
+			self assert: (aSolTermExpressionNode opt_access id_member_accesses , aSolTermExpressionNode opt_access id_list_member_accesses) size = 1.
 			self assert: aSolTermExpressionNode opt_access exps size = 1.
-			receiver := aSolTermExpressionNode factor identifiers inject: self currentContext into: [ :context :identifier | self manageMemberAccess: (identifier acceptVisitor: self) to: context ].
+			thing := aSolTermExpressionNode factor identifiers , ((aSolTermExpressionNode opt_access id_member_accesses flatCollect: #identifiers) , (aSolTermExpressionNode opt_access id_list_member_accesses flatCollect: #identifiers)).
+			receiver := thing allButLast inject: self currentContext into: [ :context :identifier | self manageMemberAccess: (identifier acceptVisitor: self) to: context ].
 			receiver := self manageArrayAccess: receiver index: (aSolTermExpressionNode opt_access exps acceptVisitor: self) first.
 			self assert: aSolTermExpressionNode opt_func_call children size = 1.
 			arguments := aSolTermExpressionNode opt_func_call func_args acceptVisitor: self.
@@ -15,7 +17,7 @@ manageMessageSend: aSolTermExpressionNode
 			message
 				parent: self currentContext;
 				receiver: receiver;
-				selector: ((aSolTermExpressionNode opt_access id_member_accesses first acceptVisitor: self) asSelectorIdentifier: buildingStrategy);
+				selector: ((thing last acceptVisitor: self) asSelectorIdentifier: buildingStrategy);
 				arguments: arguments.
 			^ message ]
 		ifFalse: [ | identifiers |

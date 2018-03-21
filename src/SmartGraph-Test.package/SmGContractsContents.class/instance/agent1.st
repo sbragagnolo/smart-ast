@@ -1,0 +1,4 @@
+contracts
+agent1
+		^ '' join: ((ZnBase64Encoder new decode: self base64agent1 ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+	

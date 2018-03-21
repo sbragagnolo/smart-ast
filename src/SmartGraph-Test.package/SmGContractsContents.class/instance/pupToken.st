@@ -1,0 +1,4 @@
+contracts
+pupToken
+		^ '' join: ((ZnBase64Encoder new decode: self base64pupToken ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+	

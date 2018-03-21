@@ -1,0 +1,4 @@
+contracts
+alphabetConvert
+		^ '' join: ((ZnBase64Encoder new decode: self base64alphabetConvert ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+	

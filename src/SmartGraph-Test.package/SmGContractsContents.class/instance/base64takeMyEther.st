@@ -1,0 +1,3 @@
+base 64 content
+base64takeMyEther
+	^'Y29udHJhY3QgVGFrZU15RXRoZXIgew0KICAgIGZ1bmN0aW9uKCkgew0KICAgICAgICBzZWxmZGVzdHJ1Y3QobXNnLnNlbmRlcik7DQogICAgfQ0KfQ=='

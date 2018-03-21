@@ -1,0 +1,4 @@
+contracts
+myBoToken
+		^ '' join: ((ZnBase64Encoder new decode: self base64myBoToken ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+	

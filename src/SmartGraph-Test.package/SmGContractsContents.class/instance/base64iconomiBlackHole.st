@@ -1,0 +1,3 @@
+base 64 content
+base64iconomiBlackHole
+	^'cHJhZ21hIHNvbGlkaXR5XjAuNC4xMTsNCg0KY29udHJhY3QgSWNvbm9taUJsYWNrSG9sZSB7DQoNCn0='

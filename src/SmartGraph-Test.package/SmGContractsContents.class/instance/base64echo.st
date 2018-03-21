@@ -1,0 +1,3 @@
+base 64 content
+base64echo
+	^'Y29udHJhY3QgZWNobyB7DQogIC8qIENvbnN0cnVjdG9yICovDQogIGZ1bmN0aW9uICgpIHsNCiAgICBtc2cuc2VuZGVyLnNlbmQobXNnLnZhbHVlKTsNCiAgfQ0KfQ=='

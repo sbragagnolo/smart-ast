@@ -1,0 +1,3 @@
+base 64 content
+base64agent1
+	^'cHJhZ21hIHNvbGlkaXR5XjAuNC4xMzsNCg0KY29udHJhY3QgQWdlbnQgew0KICAgIA0KICAgIGZ1bmN0aW9uIGcoYWRkcmVzcyBhZGRyKSBwYXlhYmxlIHsNCiAgICAgICAgYWRkci50cmFuc2Zlcihtc2cudmFsdWUpOw0KICAgIH0NCg0KfQ=='

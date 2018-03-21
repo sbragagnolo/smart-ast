@@ -31,5 +31,5 @@ visitTermExpression: aSolTermExpressionNode
 			self using: term define: [ term := aSolTermExpressionNode nested_term acceptVisitor: self ] ].
 	(term isNotNil and: [ self termExecutesReturningExpression: aSolTermExpressionNode ])
 		ifTrue: [ term := self manageExecute: term asFunctionWith: aSolTermExpressionNode nested_func_call ].
-	term ifNil: [ self halt ].
+	term ifNil: [ self error ].
 	^ term

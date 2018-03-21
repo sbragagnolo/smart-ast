@@ -1,5 +1,5 @@
 visiting user types
 visitUserDefinedTypeName: aSolUserDefinedTypeNameNode
-	^ buildingStrategy
-		createTypeBind: (aSolUserDefinedTypeNameNode user_defined_type acceptVisitor: self)
-		context: self currentContext
+	^ (aSolUserDefinedTypeNameNode user_defined_type identifiers acceptVisitor: self)
+		inject: self currentContext
+		into: [ :c :each | buildingStrategy createTypeBind: each context: c ]

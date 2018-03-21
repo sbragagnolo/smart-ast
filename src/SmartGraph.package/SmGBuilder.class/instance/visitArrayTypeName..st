@@ -7,6 +7,6 @@ visitArrayTypeName: aSolArrayTypeNameNode
 	bind lookupValue
 		ifNil: [ type := buildingStrategy createArrayType: identifier.
 			type innerType: innerType.
-			type parent: innerType lookupValue parent.
+			type parent: innerType parent parent.
 			type parent propertyAt: type identifier put: type ].
 	^ bind

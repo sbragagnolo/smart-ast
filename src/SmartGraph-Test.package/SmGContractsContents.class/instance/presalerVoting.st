@@ -1,4 +1,4 @@
 contracts
 presalerVoting
-		^ '' join: ((ZnBase64Encoder new decode: self base64presalerVoting ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64presalerVoting ) utf8Decoded .
 	

@@ -1,4 +1,4 @@
 contracts
 etherDOGEICO
-		^ '' join: ((ZnBase64Encoder new decode: self base64etherDOGEICO ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64etherDOGEICO ) utf8Decoded .
 	

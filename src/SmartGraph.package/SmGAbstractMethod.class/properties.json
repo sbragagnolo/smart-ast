@@ -9,7 +9,9 @@
 		"privacy",
 		"visibility",
 		"mutability",
-		"parameters"
+		"parameters",
+		"returns",
+		"userModifiers"
 	],
 	"name" : "SmGAbstractMethod",
 	"type" : "normal"

@@ -3,7 +3,8 @@ visitOptionalVariableDeclaration: aSolOptionalVariableDeclarationNode
 	| identifier variable type |
 	self assert: aSolOptionalVariableDeclarationNode parent opt_access exps size < 2.
 	identifier := aSolOptionalVariableDeclarationNode identifier acceptVisitor: self.
-	(aSolOptionalVariableDeclarationNode parent factor isLiteralIdentifier or: [ aSolOptionalVariableDeclarationNode parent factor isNestedIdentifier ])
+	(aSolOptionalVariableDeclarationNode parent factor isLiteralIdentifier
+		or: [ aSolOptionalVariableDeclarationNode parent factor isNestedIdentifier ])
 		ifTrue: [ type := aSolOptionalVariableDeclarationNode parent factor identifiers acceptVisitor: self.
 			type := type allButFirst
 				inject: (buildingStrategy createTypeBind: type first context: self currentContext)
@@ -11,15 +12,16 @@ visitOptionalVariableDeclaration: aSolOptionalVariableDeclarationNode
 		ifFalse: [ type := aSolOptionalVariableDeclarationNode parent factor acceptVisitor: self ].
 	aSolOptionalVariableDeclarationNode parent opt_access exps size = 1
 		ifTrue: [ " This is an array type definition "
-			| arrayID arrayType |
+			| arrayID arrayBind |
 			arrayID := type identifier asArrayIdentifierAt: buildingStrategy.
-			arrayType := buildingStrategy createTypeBind: arrayID context: self currentContext.
-			arrayType lookupValue
-				ifNil: [ type := buildingStrategy createArrayType: arrayID.
+			arrayBind := buildingStrategy createTypeBind: arrayID context: self currentContext.
+			arrayBind lookupValue
+				ifNil: [ | arrayType |
+					arrayType := buildingStrategy createArrayType: arrayID.
 					arrayType innerType: type.
 					arrayType parent: type lookupValue parent.
 					arrayType parent propertyAt: arrayType identifier put: arrayType ].
-			type := arrayType.
+			type := arrayBind.
 			type length: (aSolOptionalVariableDeclarationNode parent opt_access exps first acceptVisitor: self) ].
 	variable := buildingStrategy createVariable: identifier type: type.
 	self currentContext propertyAt: identifier put: variable.

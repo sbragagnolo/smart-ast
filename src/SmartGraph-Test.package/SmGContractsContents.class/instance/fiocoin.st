@@ -1,4 +1,4 @@
 contracts
 fiocoin
-		^ '' join: ((ZnBase64Encoder new decode: self base64fiocoin ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64fiocoin ) utf8Decoded .
 	

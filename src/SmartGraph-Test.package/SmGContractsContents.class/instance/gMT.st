@@ -1,4 +1,4 @@
 contracts
 gMT
-		^ '' join: ((ZnBase64Encoder new decode: self base64gMT ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64gMT ) utf8Decoded .
 	

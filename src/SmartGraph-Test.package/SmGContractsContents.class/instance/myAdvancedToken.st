@@ -1,4 +1,4 @@
 contracts
 myAdvancedToken
-		^ '' join: ((ZnBase64Encoder new decode: self base64myAdvancedToken ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64myAdvancedToken ) utf8Decoded .
 	

@@ -1,4 +1,4 @@
 contracts
 piggyBank3
-		^ '' join: ((ZnBase64Encoder new decode: self base64piggyBank3 ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64piggyBank3 ) utf8Decoded .
 	

@@ -1,4 +1,4 @@
 contracts
 creationContract
-		^ '' join: ((ZnBase64Encoder new decode: self base64creationContract ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64creationContract ) utf8Decoded .
 	

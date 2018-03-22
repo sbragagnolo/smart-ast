@@ -1,4 +1,4 @@
 contracts
 storadge
-		^ '' join: ((ZnBase64Encoder new decode: self base64storadge ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64storadge ) utf8Decoded .
 	

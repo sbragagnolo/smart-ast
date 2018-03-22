@@ -1,4 +1,4 @@
 contracts
 consultingHalf
-		^ '' join: ((ZnBase64Encoder new decode: self base64consultingHalf ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64consultingHalf ) utf8Decoded .
 	

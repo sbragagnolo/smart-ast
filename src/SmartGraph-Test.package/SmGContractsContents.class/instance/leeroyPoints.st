@@ -1,4 +1,4 @@
 contracts
 leeroyPoints
-		^ '' join: ((ZnBase64Encoder new decode: self base64leeroyPoints ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64leeroyPoints ) utf8Decoded .
 	

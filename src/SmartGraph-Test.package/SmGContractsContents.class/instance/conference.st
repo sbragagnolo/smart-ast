@@ -1,4 +1,4 @@
 contracts
 conference
-		^ '' join: ((ZnBase64Encoder new decode: self base64conference ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64conference ) utf8Decoded .
 	

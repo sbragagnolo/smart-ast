@@ -1,4 +1,4 @@
 contracts
 clitCrowdFunder
-		^ '' join: ((ZnBase64Encoder new decode: self base64clitCrowdFunder ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64clitCrowdFunder ) utf8Decoded .
 	

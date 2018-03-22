@@ -1,4 +1,4 @@
 contracts
 wallet
-		^ '' join: ((ZnBase64Encoder new decode: self base64wallet ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64wallet ) utf8Decoded .
 	

@@ -1,4 +1,4 @@
 contracts
 legendsCrowdfund
-		^ '' join: ((ZnBase64Encoder new decode: self base64legendsCrowdfund ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64legendsCrowdfund ) utf8Decoded .
 	

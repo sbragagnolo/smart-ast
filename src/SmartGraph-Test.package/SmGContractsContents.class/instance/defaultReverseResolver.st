@@ -1,4 +1,4 @@
 contracts
 defaultReverseResolver
-		^ '' join: ((ZnBase64Encoder new decode: self base64defaultReverseResolver ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64defaultReverseResolver ) utf8Decoded .
 	

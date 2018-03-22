@@ -1,4 +1,4 @@
 contracts
 transparencyRelayer
-		^ '' join: ((ZnBase64Encoder new decode: self base64transparencyRelayer ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64transparencyRelayer ) utf8Decoded .
 	

@@ -1,4 +1,4 @@
 contracts
 internetWall
-		^ '' join: ((ZnBase64Encoder new decode: self base64internetWall ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64internetWall ) utf8Decoded .
 	

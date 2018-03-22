@@ -1,4 +1,4 @@
 contracts
 vNDCash
-		^ '' join: ((ZnBase64Encoder new decode: self base64vNDCash ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64vNDCash ) utf8Decoded .
 	

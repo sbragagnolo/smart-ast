@@ -1,4 +1,4 @@
 contracts
 presale30
-		^ '' join: ((ZnBase64Encoder new decode: self base64presale30 ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64presale30 ) utf8Decoded .
 	

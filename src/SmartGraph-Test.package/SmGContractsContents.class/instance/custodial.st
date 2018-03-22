@@ -1,4 +1,4 @@
 contracts
 custodial
-		^ '' join: ((ZnBase64Encoder new decode: self base64custodial ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64custodial ) utf8Decoded .
 	

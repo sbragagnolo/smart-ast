@@ -1,4 +1,4 @@
 contracts
 projectKudos
-		^ '' join: ((ZnBase64Encoder new decode: self base64projectKudos ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64projectKudos ) utf8Decoded .
 	

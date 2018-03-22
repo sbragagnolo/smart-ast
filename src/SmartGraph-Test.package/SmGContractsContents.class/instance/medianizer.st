@@ -1,4 +1,4 @@
 contracts
 medianizer
-		^ '' join: ((ZnBase64Encoder new decode: self base64medianizer ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64medianizer ) utf8Decoded .
 	

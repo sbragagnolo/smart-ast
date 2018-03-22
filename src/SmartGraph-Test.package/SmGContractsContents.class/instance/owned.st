@@ -1,4 +1,4 @@
 contracts
 owned
-		^ '' join: ((ZnBase64Encoder new decode: self base64owned ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64owned ) utf8Decoded .
 	

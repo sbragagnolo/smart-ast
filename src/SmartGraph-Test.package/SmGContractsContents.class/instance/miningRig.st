@@ -1,4 +1,4 @@
 contracts
 miningRig
-		^ '' join: ((ZnBase64Encoder new decode: self base64miningRig ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64miningRig ) utf8Decoded .
 	

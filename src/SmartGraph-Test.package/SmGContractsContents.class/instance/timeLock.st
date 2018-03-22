@@ -1,4 +1,4 @@
 contracts
 timeLock
-		^ '' join: ((ZnBase64Encoder new decode: self base64timeLock ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64timeLock ) utf8Decoded .
 	

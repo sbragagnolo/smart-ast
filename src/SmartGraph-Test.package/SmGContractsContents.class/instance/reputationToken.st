@@ -1,4 +1,4 @@
 contracts
 reputationToken
-		^ '' join: ((ZnBase64Encoder new decode: self base64reputationToken ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64reputationToken ) utf8Decoded .
 	

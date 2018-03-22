@@ -1,4 +1,4 @@
 contracts
 crowdsaleToken
-		^ '' join: ((ZnBase64Encoder new decode: self base64crowdsaleToken ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64crowdsaleToken ) utf8Decoded .
 	

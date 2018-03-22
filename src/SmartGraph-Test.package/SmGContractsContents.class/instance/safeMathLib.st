@@ -1,4 +1,4 @@
 contracts
 safeMathLib
-		^ '' join: ((ZnBase64Encoder new decode: self base64safeMathLib ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64safeMathLib ) utf8Decoded .
 	

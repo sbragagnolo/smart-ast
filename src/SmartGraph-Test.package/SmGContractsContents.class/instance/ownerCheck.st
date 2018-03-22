@@ -1,4 +1,4 @@
 contracts
 ownerCheck
-		^ '' join: ((ZnBase64Encoder new decode: self base64ownerCheck ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64ownerCheck ) utf8Decoded .
 	

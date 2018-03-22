@@ -1,4 +1,4 @@
 contracts
 burnableCrowdsaleToken
-		^ '' join: ((ZnBase64Encoder new decode: self base64burnableCrowdsaleToken ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64burnableCrowdsaleToken ) utf8Decoded .
 	

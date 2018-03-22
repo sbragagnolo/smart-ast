@@ -1,4 +1,4 @@
 contracts
 ethToken
-		^ '' join: ((ZnBase64Encoder new decode: self base64ethToken ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64ethToken ) utf8Decoded .
 	

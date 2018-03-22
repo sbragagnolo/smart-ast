@@ -1,4 +1,4 @@
 contracts
 rLC
-		^ '' join: ((ZnBase64Encoder new decode: self base64rLC ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64rLC ) utf8Decoded .
 	

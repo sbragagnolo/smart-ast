@@ -1,4 +1,4 @@
 contracts
 droplexToken
-		^ '' join: ((ZnBase64Encoder new decode: self base64droplexToken ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64droplexToken ) utf8Decoded .
 	

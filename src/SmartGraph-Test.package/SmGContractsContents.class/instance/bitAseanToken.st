@@ -1,4 +1,4 @@
 contracts
 bitAseanToken
-		^ '' join: ((ZnBase64Encoder new decode: self base64bitAseanToken ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64bitAseanToken ) utf8Decoded .
 	

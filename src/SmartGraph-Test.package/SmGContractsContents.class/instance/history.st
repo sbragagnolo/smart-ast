@@ -1,4 +1,4 @@
 contracts
 history
-		^ '' join: ((ZnBase64Encoder new decode: self base64history ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64history ) utf8Decoded .
 	

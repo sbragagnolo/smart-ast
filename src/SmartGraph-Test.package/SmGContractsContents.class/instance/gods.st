@@ -1,4 +1,4 @@
 contracts
 gods
-		^ '' join: ((ZnBase64Encoder new decode: self base64gods ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64gods ) utf8Decoded .
 	

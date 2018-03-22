@@ -1,4 +1,4 @@
 contracts
 sunContractIco
-		^ '' join: ((ZnBase64Encoder new decode: self base64sunContractIco ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64sunContractIco ) utf8Decoded .
 	

@@ -1,4 +1,4 @@
 contracts
 buttcoin
-		^ '' join: ((ZnBase64Encoder new decode: self base64buttcoin ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64buttcoin ) utf8Decoded .
 	

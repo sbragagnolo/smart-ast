@@ -1,4 +1,4 @@
 contracts
 aRCToken
-		^ '' join: ((ZnBase64Encoder new decode: self base64aRCToken ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64aRCToken ) utf8Decoded .
 	

@@ -1,4 +1,4 @@
 contracts
 myYLCToken
-		^ '' join: ((ZnBase64Encoder new decode: self base64myYLCToken ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64myYLCToken ) utf8Decoded .
 	

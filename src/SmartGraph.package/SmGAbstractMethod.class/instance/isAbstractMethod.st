@@ -1,0 +1,3 @@
+testing
+isAbstractMethod
+	^ true

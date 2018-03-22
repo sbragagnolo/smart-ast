@@ -1,0 +1,3 @@
+visiting
+visitFunctionTypeName: aSolFunctionTypeNameNode 
+	self shouldBeImplemented.

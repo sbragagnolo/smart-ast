@@ -1,0 +1,4 @@
+visiting
+visitModifierStateVariableVisibility: aSolModifierStateVariableVisibilityNode
+	^ buildingStrategy
+		createVisibilityModifier: aSolModifierStateVariableVisibilityNode valueToken value

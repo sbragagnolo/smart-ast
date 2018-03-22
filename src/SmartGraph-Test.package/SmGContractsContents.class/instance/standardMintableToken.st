@@ -1,4 +1,4 @@
 contracts
 standardMintableToken
-		^ '' join: ((ZnBase64Encoder new decode: self base64standardMintableToken ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64standardMintableToken ) utf8Decoded .
 	

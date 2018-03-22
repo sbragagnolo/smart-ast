@@ -1,4 +1,4 @@
 contracts
 cryptoPunksMarket
-		^ '' join: ((ZnBase64Encoder new decode: self base64cryptoPunksMarket ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64cryptoPunksMarket ) utf8Decoded .
 	

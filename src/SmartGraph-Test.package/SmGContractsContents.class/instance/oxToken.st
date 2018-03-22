@@ -1,4 +1,4 @@
 contracts
 oxToken
-		^ '' join: ((ZnBase64Encoder new decode: self base64oxToken ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64oxToken ) utf8Decoded .
 	

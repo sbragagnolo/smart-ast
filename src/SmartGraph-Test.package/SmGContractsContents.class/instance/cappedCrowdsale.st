@@ -1,4 +1,4 @@
 contracts
 cappedCrowdsale
-		^ '' join: ((ZnBase64Encoder new decode: self base64cappedCrowdsale ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64cappedCrowdsale ) utf8Decoded .
 	

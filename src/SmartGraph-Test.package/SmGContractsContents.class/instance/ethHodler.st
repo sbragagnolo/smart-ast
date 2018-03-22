@@ -1,4 +1,4 @@
 contracts
 ethHodler
-		^ '' join: ((ZnBase64Encoder new decode: self base64ethHodler ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64ethHodler ) utf8Decoded .
 	

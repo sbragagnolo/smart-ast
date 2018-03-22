@@ -1,4 +1,4 @@
 contracts
 game
-		^ '' join: ((ZnBase64Encoder new decode: self base64game ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64game ) utf8Decoded .
 	

@@ -1,4 +1,4 @@
 contracts
 ziberToken
-		^ '' join: ((ZnBase64Encoder new decode: self base64ziberToken ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64ziberToken ) utf8Decoded .
 	

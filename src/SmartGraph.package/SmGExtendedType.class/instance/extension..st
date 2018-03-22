@@ -1,4 +1,4 @@
 accessing
 extension: aSmGLibrary
-	self assert: aSmGLibrary type isLibrary.
+	aSmGLibrary type ifNotNil: [ :t | self assert: t isLibrary ].
 	extension := aSmGLibrary

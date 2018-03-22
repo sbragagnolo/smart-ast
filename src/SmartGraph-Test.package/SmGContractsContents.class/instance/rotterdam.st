@@ -1,4 +1,4 @@
 contracts
 rotterdam
-		^ '' join: ((ZnBase64Encoder new decode: self base64rotterdam ) asOrderedCollection collect: [ : b | Character value: b  ] ).
+		^ (ZnBase64Encoder new decode: self base64rotterdam ) utf8Decoded .
 	

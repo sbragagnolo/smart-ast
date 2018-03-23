@@ -1,3 +1,3 @@
 accessing
 propertyAt: anIdenfier put: anObject
-	self assert: anObject isAbstractMethod. 
+	self assert: (anObject isAcceptableInInterface or: [ anObject = self ])

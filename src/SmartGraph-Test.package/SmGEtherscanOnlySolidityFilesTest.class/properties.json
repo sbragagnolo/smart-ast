@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "SmGEtherscanFilesTest",
+	"category" : "SmartGraph-Test",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SmGEtherscanOnlySolidityFilesTest",
+	"type" : "normal"
+}

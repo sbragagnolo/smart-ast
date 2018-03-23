@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "SmGContextualNode",
+	"category" : "SmartGraph-nodes",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"expression",
+		"cases"
+	],
+	"name" : "SmGAsmSwitch",
+	"type" : "normal"
+}

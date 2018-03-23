@@ -1,6 +1,6 @@
 printing
 printOn: aStream
-	aStream nextPutAll: identifier.
+	identifier printOn: aStream.
 	aStream nextPut: $(.
 	arguments
 		ifNotNil: [ arguments

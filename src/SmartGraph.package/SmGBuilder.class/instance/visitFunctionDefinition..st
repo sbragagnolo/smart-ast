@@ -1,7 +1,7 @@
 visiting - functions
 visitFunctionDefinition: aSolFunctionDefinitionNode
 	| method identifier parameters |
-	parameters := aSolFunctionDefinitionNode param_list acceptVisitor: self.
+	parameters := aSolFunctionDefinitionNode parameters acceptVisitor: self.
 	identifier := (aSolFunctionDefinitionNode identifier acceptVisitor: self) asMethodIdentifier: buildingStrategy parameters: parameters.
 	method := aSolFunctionDefinitionNode block
 		ifNil: [ buildingStrategy createAbstractMethod: identifier ]

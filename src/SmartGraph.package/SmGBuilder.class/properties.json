@@ -9,7 +9,8 @@
 		"generalContext",
 		"stack",
 		"buildingStrategy",
-		"code"
+		"code",
+		"version"
 	],
 	"name" : "SmGBuilder",
 	"type" : "normal"

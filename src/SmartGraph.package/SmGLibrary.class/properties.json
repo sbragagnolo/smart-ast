@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "SmGContextIdentifiedNode",
+	"super" : "SmGContract",
 	"category" : "SmartGraph-nodes",
 	"classinstvars" : [ ],
 	"pools" : [ ],

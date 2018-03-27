@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "SmGTestCase",
+	"category" : "SmartGraph-Test",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SmGWriterTestCase",
+	"type" : "normal"
+}

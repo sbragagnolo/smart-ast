@@ -10,6 +10,7 @@
 		"visibility",
 		"mutability",
 		"parameters",
+		"payable",
 		"returns",
 		"userModifiers"
 	],

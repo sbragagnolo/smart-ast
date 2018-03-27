@@ -6,8 +6,7 @@ testEtherscanContractCasino2V048
 	https://etherscan.io/address/0xa689af64e3f86716374c3d11eaab0d47a75cb571#code
 	"
 self parseTest: 
-'pragma solidity ^0.4.8;
-
+'
 //ide http://dapps.oraclize.it/browser-solidity/
 
 // <ORACLIZE_API>

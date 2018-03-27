@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "SmartGraph-builder",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"content",
+		"stream"
+	],
+	"name" : "SmGCodeWriter",
+	"type" : "normal"
+}

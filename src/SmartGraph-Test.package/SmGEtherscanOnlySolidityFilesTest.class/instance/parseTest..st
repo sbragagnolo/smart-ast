@@ -1,3 +1,3 @@
 parsing
 parseTest: aCode
-	(SolidityParser parseStream: aCode readStream)
+	^ (SolidityParser parseStream: aCode readStream)

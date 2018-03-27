@@ -1,0 +1,3 @@
+accessing
+isPayable
+	^ payable isPayable

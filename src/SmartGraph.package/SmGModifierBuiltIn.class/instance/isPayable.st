@@ -1,0 +1,3 @@
+testing
+isPayable
+	^ value = #payable 

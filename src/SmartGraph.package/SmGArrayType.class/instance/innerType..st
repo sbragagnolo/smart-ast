@@ -1,3 +1,3 @@
 accessing
-innerType: aSmGTypeBind 
+innerType: aSmGTypeBind
 	innerType := aSmGTypeBind

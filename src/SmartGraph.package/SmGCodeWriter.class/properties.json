@@ -6,7 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"content",
 		"stream"
 	],
 	"name" : "SmGCodeWriter",

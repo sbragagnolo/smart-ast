@@ -1,3 +1,3 @@
 visiting
 visitIdentifier: aIdentifier
-	^ self shouldBeImplemented 
+	stream nextPutAll: aIdentifier literalValue.

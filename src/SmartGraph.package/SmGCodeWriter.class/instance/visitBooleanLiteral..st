@@ -1,3 +1,3 @@
 visiting
 visitBooleanLiteral: aBooleanLiteral
-	^ self shouldBeImplemented 
+	stream nextPutAll: aBooleanLiteral literalValue asString

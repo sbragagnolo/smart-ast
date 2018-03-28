@@ -1,3 +1,3 @@
 visiting
 visitModifierBuiltIn: aModifierBuiltIn
-	^ self shouldBeImplemented 
+	stream nextPutAll: aModifierBuiltIn literalValue

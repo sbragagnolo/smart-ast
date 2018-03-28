@@ -4,7 +4,7 @@ visitLibrary: aLibrary
 		nextPutAll: 'library ';
 		nextPutAll: aLibrary identifier literalValue;
 		nextPutAll: ' {'.
-	self halt.
+
 	aLibrary typeDefinitions acceptVisitor: self.
 	aLibrary variables acceptVisitor: self.
 	aLibrary events acceptVisitor: self.

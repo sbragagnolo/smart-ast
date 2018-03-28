@@ -1,3 +1,7 @@
 visiting
 visitVariable: aVariable
-	^ self shouldBeImplemented 
+	stream
+		nextPutAll: aVariable type type typename;
+		nextPutAll: ' ';
+		nextPutAll: aVariable identifier literalValue;
+		nextPutAll: ';'

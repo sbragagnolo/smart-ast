@@ -1,3 +1,3 @@
 visiting
 visitBoolean: aBoolean
-	^ self shouldBeImplemented 
+	stream nextPutAll: aBoolean typename

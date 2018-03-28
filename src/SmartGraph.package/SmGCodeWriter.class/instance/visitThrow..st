@@ -1,3 +1,3 @@
 visiting
 visitThrow: aThrow
-	^ self shouldBeImplemented 
+	stream nextPutAll: 'throw'

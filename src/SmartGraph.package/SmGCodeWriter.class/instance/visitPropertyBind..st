@@ -1,3 +1,7 @@
 visiting
 visitPropertyBind: aPropertyBind
-	^ self shouldBeImplemented 
+	aPropertyBind parent isBind ifTrue:[ 
+		aPropertyBind parent acceptVisitor: self. 
+		stream nextPutAll:'.'.
+	].
+	stream nextPutAll: aPropertyBind identifier literalValue.

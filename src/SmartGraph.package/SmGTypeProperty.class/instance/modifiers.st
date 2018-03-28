@@ -1,4 +1,4 @@
 accessing
 modifiers
-	^ {modifier.
-	privacy} select: #isNotNil
+	^ ({modifier.
+	privacy} select: #isNotNil) asSet

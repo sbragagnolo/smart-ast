@@ -1,3 +1,3 @@
 visiting
 visitDecimalNumberLiteral: aDecimalNumberLiteral
-	^ self shouldBeImplemented 
+	stream nextPutAll: aDecimalNumberLiteral literalValue asString

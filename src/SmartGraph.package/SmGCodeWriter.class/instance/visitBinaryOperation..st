@@ -1,3 +1,9 @@
 visiting
 visitBinaryOperation: aBinaryOperation
-	^ self shouldBeImplemented 
+	aBinaryOperation left acceptVisitor: self.
+	stream
+		nextPutAll: ' ';
+		nextPutAll: aBinaryOperation operation;
+		nextPutAll: ' '.
+	aBinaryOperation right acceptVisitor: self.
+	stream nextPutAll: ';'

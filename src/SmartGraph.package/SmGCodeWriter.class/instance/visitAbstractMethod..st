@@ -7,4 +7,4 @@ visitAbstractMethod: anAbstractMethod
 		nextPutAll: '(';
 		nextPutAll: (self extractParameters: anAbstractMethod parameters);
 		nextPutAll: ') returns (';
-		nextPutAll: (self extractParameters: anAbstractMethod return).
+		nextPutAll: (self extractParameters: anAbstractMethod returns).

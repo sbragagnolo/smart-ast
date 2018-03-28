@@ -1,3 +1,7 @@
 parsing
 parseTest: aCode
-	^ (super parseTest: aCode) acceptVisitor: SmGCodeWriter new
+	| writer |
+	writer := SmGCodeWriter new.
+	(super parseTest: aCode) acceptVisitor: writer.
+	writer inspect.
+	^ writer

@@ -8,7 +8,8 @@
 	"instvars" : [
 		"condition",
 		"ifTrue",
-		"ifFalse"
+		"ifFalse",
+		"isTernary"
 	],
 	"name" : "SmGIfStatement",
 	"type" : "normal"

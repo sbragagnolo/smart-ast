@@ -1,3 +1,6 @@
 visiting
 visitAssignement: aAssignement
-	^ self shouldBeImplemented 
+	aAssignement left acceptVisitor: self.
+	stream nextPutAll: ' = '.
+	aAssignement right acceptVisitor: self.
+	stream nextPutAll: ';'.

@@ -1,3 +1,5 @@
 visiting
 visitReturnNode: aReturnNode
-	^ self shouldBeImplemented 
+	stream nextPutAll: 'return '.
+	aReturnNode return acceptVisitor: self.
+	stream nextPutAll: ';'

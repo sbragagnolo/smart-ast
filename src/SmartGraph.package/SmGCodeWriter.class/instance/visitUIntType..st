@@ -1,3 +1,3 @@
 visiting
 visitUIntType: aUIntType
-	^ self shouldBeImplemented 
+	stream nextPutAll: aUIntType typename 

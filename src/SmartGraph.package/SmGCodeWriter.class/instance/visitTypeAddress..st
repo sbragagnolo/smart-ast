@@ -1,3 +1,3 @@
 visiting
 visitTypeAddress: aTypeAddress
-	^ self shouldBeImplemented 
+	stream nextPutAll: aTypeAddress typename 

@@ -4,7 +4,7 @@ visitContract: aContract
 		nextPutAll: 'contract ';
 		nextPutAll: aContract identifier literalValue;
 		nextPutAll: ' {'.
-	self halt.
+
 	aContract typeDefinitions acceptVisitor: self.
 	aContract variables acceptVisitor: self.
 	aContract events acceptVisitor: self.

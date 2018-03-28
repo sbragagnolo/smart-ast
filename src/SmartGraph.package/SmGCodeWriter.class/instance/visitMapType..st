@@ -1,3 +1,5 @@
 visiting
 visitMapType: aMapType
-	^ self shouldBeImplemented 
+	aMapType key type acceptVisitor: self.
+	stream nextPutAll: ' => '.
+	aMapType value type acceptVisitor: self

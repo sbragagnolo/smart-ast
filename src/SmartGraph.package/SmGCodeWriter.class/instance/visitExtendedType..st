@@ -1,3 +1,3 @@
 visiting
 visitExtendedType: aExtendedType
-	^ self shouldBeImplemented 
+	aExtendedType type acceptVisitor: self

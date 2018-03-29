@@ -1,8 +1,8 @@
 visiting
 visitTypeProperty: aTypeProperty
-	aTypeProperty type type acceptVisitor: self.
+	aTypeProperty type acceptVisitor: self.
 	stream nextPutAll: ' '.
-	aTypeProperty modifiers acceptVisitor: self.
+	aTypeProperty modifier acceptVisitor: self.
 	stream nextPutAll: ' '.
 	aTypeProperty identifier acceptVisitor: self.
 	aTypeProperty initialValue

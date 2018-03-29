@@ -1,3 +1,5 @@
 visiting
 visitIdentifier: aIdentifier
-	stream nextPutAll: aIdentifier literalValue.
+	(aIdentifier literalValue asString endsWith: '>>Fallback')
+		ifTrue: [ ^ self ].
+	stream nextPutAll: aIdentifier literalValue

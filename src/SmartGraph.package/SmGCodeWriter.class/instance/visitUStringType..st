@@ -1,3 +1,3 @@
 visiting
 visitUStringType: aUStringType
-	^ self shouldBeImplemented 
+	stream nextPutAll: 'string'

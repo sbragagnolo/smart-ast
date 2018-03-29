@@ -1,3 +1,3 @@
 accessing
 privacy: aSmGModifierBuiltIn
-	privacy := aSmGModifierBuiltIn
+	self modifier: aSmGModifierBuiltIn

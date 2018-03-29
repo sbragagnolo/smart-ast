@@ -11,6 +11,8 @@ visitIfStatement: aIfStatement
 			aIfStatement condition acceptVisitor: self.
 			stream nextPutAll: ')'.
 			aIfStatement ifTrue acceptVisitor: self.
+			aIfStatement ifTrue isContextualNode
+				ifFalse: [ stream nextPutAll: ';' ].
 			aIfStatement ifFalse
 				ifNotNil: [ stream
 						nextPutAll: String crlf;

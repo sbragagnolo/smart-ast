@@ -3,8 +3,8 @@ visitSequence: aSequence
 	stream
 		nextPutAll: '{';
 		nextPutAll: String crlf.
-	aSequence variables acceptVisitor: self.
-	aSequence statements acceptVisitor: self.
+"	self printStatements: aSequence variables."
+	self printStatements: aSequence statements.
 	stream
 		nextPutAll: String crlf;
 		nextPutAll: '}'

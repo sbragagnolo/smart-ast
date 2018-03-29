@@ -1,5 +1,6 @@
 as yet unclassified
 extractParameters: parameters
+self halt. 
 	^ parameters
 		ifNil: [ '' ]
 		ifNotNil: [ ','
@@ -8,7 +9,6 @@ extractParameters: parameters
 						collect: [ :p | 
 							String
 								streamContents: [ :str | 
-									str
-										nextPutAll: p type type typename;
-										nextPutAll: ' ';
-										nextPutAll: p identifier literalValue ] ]) ]
+									p type acceptVisitor: self.
+									str nextPutAll: ' '.
+									p identifier acceptVisitor: self ] ]) ]

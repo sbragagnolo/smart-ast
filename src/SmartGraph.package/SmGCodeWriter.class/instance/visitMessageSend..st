@@ -1,11 +1,14 @@
 visiting
 visitMessageSend: aMessageSend
 	| args |
+	(aMessageSend receiver isIdentifier and: [ aMessageSend receiver literalValue = #self ])
+		ifFalse: [ aMessageSend receiver acceptVisitor: self.
+			stream nextPutAll: '.' ].
 	aMessageSend identifier acceptVisitor: self.
 	stream nextPutAll: '('.
 	args := aMessageSend arguments ifNil: [ {} ].
 	args
-		do: [ :a | 
+		allButLastDo: [ :a | 
 			a acceptVisitor: self.
 			stream nextPutAll: ', ' ].
 	args size > 0

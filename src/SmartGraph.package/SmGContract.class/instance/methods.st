@@ -1,3 +1,4 @@
 accessing
 methods
-	^ properties values select: [  : p | p isMethod  ]
+	^ properties values
+		select: [ :p | p isMethod or: [ p isAbstractMethod ] ]

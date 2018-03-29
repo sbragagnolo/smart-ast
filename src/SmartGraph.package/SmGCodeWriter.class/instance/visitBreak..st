@@ -1,3 +1,3 @@
 visiting
 visitBreak: aBreak
-	^ self shouldBeImplemented 
+	stream nextPutAll: 'break'

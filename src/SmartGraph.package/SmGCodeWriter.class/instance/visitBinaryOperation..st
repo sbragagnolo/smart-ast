@@ -6,4 +6,3 @@ visitBinaryOperation: aBinaryOperation
 		nextPutAll: aBinaryOperation operation;
 		nextPutAll: ' '.
 	aBinaryOperation right acceptVisitor: self.
-	stream nextPutAll: ';'

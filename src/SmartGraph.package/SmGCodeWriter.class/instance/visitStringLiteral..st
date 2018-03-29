@@ -1,3 +1,3 @@
 visiting
 visitStringLiteral: aStringLiteral
-	^ self shouldBeImplemented 
+	stream nextPutAll: aStringLiteral literalValue

@@ -1,3 +1,6 @@
 visiting
 visitTypeBind: aTypeBind
-	^ self shouldBeImplemented 
+
+	aTypeBind type isMapping
+		ifTrue: [ aTypeBind type acceptVisitor: self ]
+		ifFalse: [ aTypeBind identifier acceptVisitor: self ]

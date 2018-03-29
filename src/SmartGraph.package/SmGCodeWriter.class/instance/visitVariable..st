@@ -1,7 +1,5 @@
 visiting
 visitVariable: aVariable
-	stream
-		nextPutAll: aVariable type type typename;
-		nextPutAll: ' ';
-		nextPutAll: aVariable identifier literalValue;
-		nextPutAll: ';'
+	aVariable type acceptVisitor: self.
+	stream nextPutAll: ' '.
+	aVariable identifier acceptVisitor: self

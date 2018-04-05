@@ -1,5 +1,5 @@
 creating
 query
-	^ SmGSimpleQuery new
+	^ SmGProgramSimpleQuery new
 		program: self;
 		yourself

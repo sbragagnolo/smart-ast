@@ -1,11 +1,13 @@
 {
 	"commentStamp" : "",
-	"super" : "SmGUserDefinedType",
+	"super" : "Object",
 	"category" : "SmartGraph-nodes",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
-	"name" : "SmGTypeAddress",
+	"instvars" : [
+		"program"
+	],
+	"name" : "SmGProgramSimpleQuery",
 	"type" : "normal"
 }

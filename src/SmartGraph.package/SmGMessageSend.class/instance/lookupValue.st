@@ -1,3 +1,5 @@
 accessing
 lookupValue
-	^ (parent lookUp: receiver) lookUp: identifier
+	^ parent = receiver parent
+		ifTrue: [ receiver lookUp: identifier ]
+		ifFalse: [ parent lookUp: identifier ]

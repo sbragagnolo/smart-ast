@@ -6,6 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "SmGTypeAddress",
+	"name" : "SmGTypeTransaction",
 	"type" : "normal"
 }

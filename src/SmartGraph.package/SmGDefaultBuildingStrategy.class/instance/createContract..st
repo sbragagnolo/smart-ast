@@ -1,5 +1,8 @@
 create - contract
 createContract: aSmGIdentifier
-	^ SmGContract new
+	| contract |
+	contract := SmGContract new
 		identifier: aSmGIdentifier;
-		yourself
+		yourself.
+	"	self initializeAddressType: contract."
+	^ contract

@@ -11,5 +11,4 @@ manageCascadeAccess: aSolTermExpressionNode
 				inject: expression
 				into: [ :m :each | self manageArrayAccess: m index: (each acceptVisitor: self) ] ]
 		ifFalse: [ expression ].
-	expression parent: self currentContext.
 	^ expression

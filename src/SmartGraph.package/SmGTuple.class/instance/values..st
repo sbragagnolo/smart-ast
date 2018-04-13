@@ -1,3 +1,3 @@
 accessing
 values: aCollection
-	values := aCollection
+	values := aCollection ifNil: [ {} ]

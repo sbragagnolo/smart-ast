@@ -1,5 +1,8 @@
 create - contract
 createInterface: aSmGIdentifier
-	^ SmGInterface new
+	| interface |
+	interface := SmGInterface new
 		identifier: aSmGIdentifier;
-		yourself
+		yourself.
+	self initializeAddressType: interface.
+	^ interface

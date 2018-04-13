@@ -6,7 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"length"
+		"length",
+		"innerType"
 	],
 	"name" : "SmGBytes",
 	"type" : "normal"

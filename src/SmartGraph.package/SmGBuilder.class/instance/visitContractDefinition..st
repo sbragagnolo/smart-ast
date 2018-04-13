@@ -10,8 +10,10 @@ visitContractDefinition: aSolContractDefinitionNode
 	self assert: contract isNotNil.
 	self currentContext propertyAt: contract identifier put: contract.
 	aSolContractDefinitionNode definition_type value = #contract
-		ifTrue: [ contract inheritances: (aSolContractDefinitionNode inheritances acceptVisitor: self) ].
+		ifTrue: [ contract inheritances: (aSolContractDefinitionNode inheritances acceptVisitor: self).
+			contract inheritances add: (buildingStrategy createAddressTypeBindFromContext: self currentContext) ].
 	self
 		using: contract
 		define: [ self currentContext propertyAt: buildingStrategy createSelfIdentifier put: contract.
+			self currentContext propertyAt: buildingStrategy createThisIdentifier put: contract.
 			aSolContractDefinitionNode contract_sources acceptVisitor: self ]

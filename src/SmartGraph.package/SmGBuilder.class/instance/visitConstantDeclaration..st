@@ -4,12 +4,9 @@ visitConstantDeclaration: aSolConstantDeclarationNode
 	id := aSolConstantDeclarationNode identifier acceptVisitor: self.
 	constant := buildingStrategy createConstant: id.
 	self currentContext propertyAt: id put: constant.
-	self
-		using: constant
-		define: [ type := aSolConstantDeclarationNode type acceptVisitor: self.
-			value := aSolConstantDeclarationNode exp acceptVisitor: self.
-			constant
-				type: type;
-				parent: self currentContext;
-				value: value ].
+	type := aSolConstantDeclarationNode type acceptVisitor: self.
+	value := aSolConstantDeclarationNode exp acceptVisitor: self.
+	constant
+		type: type;
+		value: value.
 	^ constant

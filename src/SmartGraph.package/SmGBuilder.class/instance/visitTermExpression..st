@@ -5,7 +5,7 @@ visitTermExpression: aSolTermExpressionNode
 		ifTrue: [ aSolTermExpressionNode factor: (aSolTermExpressionNode factor at: 2) ].
 
 	" Variable definition "
-	(term isNil and: [ self termIsVariableDefinition: aSolTermExpressionNode ])
+	(self termIsVariableDefinition: aSolTermExpressionNode)
 		ifTrue: [ term := self manageVariableDefinition: aSolTermExpressionNode ].
 	"Constructor"
 	(term isNil and: [ self termIsConstructor: aSolTermExpressionNode ])

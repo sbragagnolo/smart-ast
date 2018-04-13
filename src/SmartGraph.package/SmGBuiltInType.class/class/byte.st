@@ -1,3 +1,3 @@
 creating
 byte
-	^ SmGBytes new 
+	^ SmGByte new 

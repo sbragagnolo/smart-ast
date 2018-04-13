@@ -7,4 +7,5 @@ manageArithmeticBinaryOperation: anSolOperationNode
 	operation
 		left: left;
 		right: right.
+	operation parent: self currentContext.
 	^ operation

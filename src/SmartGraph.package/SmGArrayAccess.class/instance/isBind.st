@@ -1,0 +1,3 @@
+resolving type
+isBind
+	^ true 

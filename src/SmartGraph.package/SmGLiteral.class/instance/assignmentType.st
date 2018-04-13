@@ -1,0 +1,3 @@
+typeing
+assignmentType
+	^ type 

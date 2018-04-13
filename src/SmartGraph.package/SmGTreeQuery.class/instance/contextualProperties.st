@@ -1,6 +1,7 @@
 querying
 contextualProperties
 	^ self binds
-		select:  [ :b | 
-			b lookupValue isNotNil
-				and: [ b lookupValue isContractProperty and: [ b lookupValue isContextProperty ] ] ]
+		select: [ :b | 
+			| lu |
+			lu := b lookupValue.
+			lu isFail not and: [ lu isContractProperty and: [ lu isContextProperty ] ] ]

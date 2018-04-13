@@ -7,6 +7,8 @@ visitVariableDefinition: aSolVariableDefinitionNode
 	type := buildingStrategy createTypeBind: #var context: self currentContext.
 	^ ids
 		collect: [ :id | 
+			id value value = #l
+				ifTrue: [ self halt ].
 			variable := buildingStrategy createVariable: id type: type.
 			variable parent: self currentContext.
 			variable initialValue: initialValue.

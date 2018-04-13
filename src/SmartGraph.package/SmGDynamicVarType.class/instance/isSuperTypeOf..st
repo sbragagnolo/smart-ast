@@ -1,0 +1,3 @@
+printing
+isSuperTypeOf: aSmGBytes
+	^ true

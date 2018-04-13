@@ -1,3 +1,3 @@
 create identifier
 createSelfIdentifier
-	^ self createIdentifier: #self
+	^ self createIdentifier: #'*-self'

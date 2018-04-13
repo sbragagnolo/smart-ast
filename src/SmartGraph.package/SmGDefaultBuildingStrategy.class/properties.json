@@ -6,7 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"uniqueInstances"
+		"uniqueInstances",
+		"generalContext"
 	],
 	"name" : "SmGDefaultBuildingStrategy",
 	"type" : "normal"

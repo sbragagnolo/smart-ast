@@ -13,6 +13,7 @@ createMsgType
 			value := self internalCreateInContext: type aTypedProperty: #value type: #uint.
 			type propertyAt: data identifier put: data.
 			type propertyAt: gas identifier put: gas.
+			type propertyAt: sender identifier put: sender.
 			type propertyAt: sig identifier put: sig.
 			type propertyAt: value identifier put: value.
 			type ]

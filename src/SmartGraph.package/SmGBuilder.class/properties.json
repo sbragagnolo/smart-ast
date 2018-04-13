@@ -10,7 +10,8 @@
 		"stack",
 		"buildingStrategy",
 		"code",
-		"version"
+		"version",
+		"ret"
 	],
 	"name" : "SmGBuilder",
 	"type" : "normal"

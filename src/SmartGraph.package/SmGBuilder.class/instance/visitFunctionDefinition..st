@@ -2,7 +2,9 @@ visiting - functions
 visitFunctionDefinition: aSolFunctionDefinitionNode
 	| method identifier parameters |
 	parameters := aSolFunctionDefinitionNode parameters acceptVisitor: self.
-	identifier := (aSolFunctionDefinitionNode identifier acceptVisitor: self) asMethodIdentifier: buildingStrategy parameters: parameters.
+	identifier := (aSolFunctionDefinitionNode identifier acceptVisitor: self)
+		asMethodIdentifier: buildingStrategy
+		parameters: parameters.
 	method := aSolFunctionDefinitionNode block
 		ifNil: [ buildingStrategy createAbstractMethod: identifier ]
 		ifNotNil: [ buildingStrategy createMethod: identifier ].
@@ -10,8 +12,14 @@ visitFunctionDefinition: aSolFunctionDefinitionNode
 	self
 		using: method
 		define: [ method parameters: parameters.
-			method returns: (aSolFunctionDefinitionNode returned_types acceptVisitor: self).
+			method
+				returns:
+					(SmGTuple new
+						parent: self currentContext;
+						yourself).
+			method returns values: (aSolFunctionDefinitionNode returned_types acceptVisitor: self).
 			aSolFunctionDefinitionNode modifiers acceptVisitor: self.
-			aSolFunctionDefinitionNode block ifNotNil: [ method body: (aSolFunctionDefinitionNode block acceptVisitor: self) ] ].
+			aSolFunctionDefinitionNode block
+				ifNotNil: [ method body: (aSolFunctionDefinitionNode block acceptVisitor: self) ] ].
 	self currentContext propertyAt: identifier put: method.
 	^ method

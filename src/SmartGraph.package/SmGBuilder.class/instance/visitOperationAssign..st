@@ -11,4 +11,5 @@ visitOperationAssign: aSolOperationAssignNode
 			op left: left.
 			op right: right.
 			assignment right: op ].
+	assignment parent: self currentContext. 
 	^ assignment

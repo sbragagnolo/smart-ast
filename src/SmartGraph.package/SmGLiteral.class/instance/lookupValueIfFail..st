@@ -1,0 +1,3 @@
+polimorfism
+lookupValueIfFail: aBlock
+	^ self 

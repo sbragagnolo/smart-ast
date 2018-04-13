@@ -1,10 +1,9 @@
 visiting - functions
 visitExpressionParenthesis: aSolExpressionParenthesisNode
-	^ aSolExpressionParenthesisNode follow_exp
+	ret := aSolExpressionParenthesisNode follow_exp
 		ifNil: [ aSolExpressionParenthesisNode exp acceptVisitor: self ]
 		ifNotNil: [ " Is a cast expression "
-			(aSolExpressionParenthesisNode exp factor isTypeName
-				or: [ aSolExpressionParenthesisNode exp factor isLiteralIdentifier ])
+			(aSolExpressionParenthesisNode exp factor isTypeName or: [ aSolExpressionParenthesisNode exp factor isLiteralIdentifier ])
 				ifTrue: [ | cast |
 					cast := buildingStrategy createCast.
 					cast type: (aSolExpressionParenthesisNode exp factor acceptVisitor: self).
@@ -16,4 +15,6 @@ visitExpressionParenthesis: aSolExpressionParenthesisNode
 					receiver := aSolExpressionParenthesisNode exp acceptVisitor: self.
 					messageSend := self manageMessageSend: aSolExpressionParenthesisNode follow_exp nested_term.
 					messageSend receiver: receiver.
-					messageSend ] ]
+					messageSend ] ].
+	ret parent: self currentContext.
+	^ ret

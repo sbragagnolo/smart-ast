@@ -10,7 +10,7 @@ internalCreateInContext: aContext anAbstractMethod: aSymbol parameters: aCollect
 	identifier := self blockTypeIdentifier.
 	^ self
 		privateUniqueInstanceFor: identifier
-		orCreate: [ type := SmGTypeMessage new.
+		orCreate: [ type := SmGTypeBlock new.
 			type identifier: identifier.
 			coinbase := self internalCreateInContext: type aTypedProperty: #coinbase type: #address.
 			difficulty := self internalCreateInContext: type aTypedProperty: #difficulty type: #uint.

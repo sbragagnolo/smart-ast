@@ -1,0 +1,3 @@
+type comparing
+isVarType
+	^ true 

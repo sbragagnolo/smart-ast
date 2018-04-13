@@ -1,3 +1,5 @@
 lookup
 lookUp: aSmGIdentifier
-	^ parent ifNotNil: [ parent lookUp: aSmGIdentifier ] ifNil: [ nil ]
+	^ self
+		lookUp: aSmGIdentifier
+		ifFail: [ : fail | fail ]

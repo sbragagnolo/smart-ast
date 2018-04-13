@@ -4,6 +4,7 @@ manageBooleanBinaryOperation: aSolOperationNode
 	left := aSolOperationNode lhs_exp acceptVisitor: self.
 	right := aSolOperationNode rhs_exp acceptVisitor: self.
 	or := buildingStrategy createBooleanBinaryOperation: aSolOperationNode operation value asSymbol.
+	or parent: self currentContext.
 	or
 		left: left;
 		right: right.

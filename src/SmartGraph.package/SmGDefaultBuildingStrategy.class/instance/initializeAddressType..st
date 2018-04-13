@@ -1,6 +1,6 @@
 accessing
 initializeAddressType: anAddressType
-	| balance transfer send call callcode delegatecall |
+	| balance transfer send call callcode delegatecall selfbind |
 	balance := self internalCreateInContext: anAddressType aTypedProperty: #balance type: #uint256.
 	transfer := self
 		internalCreateInContext: anAddressType
@@ -27,9 +27,11 @@ initializeAddressType: anAddressType
 		anAbstractMethod: #delegatecall
 		parameters: #(string name '...' '...')
 		return: #(bool).
+		selfbind := self createSelfIdentifier .
 	anAddressType propertyAt: balance identifier put: balance.
 	anAddressType propertyAt: transfer identifier put: transfer.
 	anAddressType propertyAt: send identifier put: send.
 	anAddressType propertyAt: call identifier put: call.
 	anAddressType propertyAt: callcode identifier put: callcode.
+	anAddressType propertyAt: selfbind put: anAddressType.
 	anAddressType propertyAt: delegatecall identifier put: delegatecall

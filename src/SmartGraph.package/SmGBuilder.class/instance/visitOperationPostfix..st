@@ -1,5 +1,6 @@
 visiting operations
-visitOperationPostfix: aSolOperationPostfixNode 
+visitOperationPostfix: aSolOperationPostfixNode
 	| operation |
 	operation := buildingStrategy createPostfixOperation: aSolOperationPostfixNode operation value.
-	^ operation expression: (aSolOperationPostfixNode exp acceptVisitor: self).
+	operation parent: self currentContext.
+	^ operation expression: (aSolOperationPostfixNode exp acceptVisitor: self)

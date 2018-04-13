@@ -12,7 +12,8 @@
 		"parameters",
 		"payable",
 		"returns",
-		"userModifiers"
+		"userModifiers",
+		"type"
 	],
 	"name" : "SmGAbstractMethod",
 	"type" : "normal"

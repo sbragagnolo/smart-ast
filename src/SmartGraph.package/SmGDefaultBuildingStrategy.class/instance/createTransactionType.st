@@ -4,7 +4,7 @@ createTransactionType
 	identifier := self transactionTypeIdentifier.
 	^ self
 		privateUniqueInstanceFor: identifier
-		orCreate: [ type := SmGTypeMessage new.
+		orCreate: [ type := SmGTypeTransaction new.
 			type identifier: identifier.
 			gasprice := self internalCreateInContext: type aTypedProperty: #gasprice type: #uint.
 			origin := self internalCreateInContext: type aTypedProperty: #origin type: #address.

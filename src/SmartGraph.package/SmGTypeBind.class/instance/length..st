@@ -1,4 +1,4 @@
 length
 length: aSmGDecimalNumberLiteral
-	self lookupValue ifNotNil: [ :val | self assert: val isArrayType ].
+	self lookupValue ifNotFail: [ :val | self assert: val isArrayType ].
 	length := aSmGDecimalNumberLiteral

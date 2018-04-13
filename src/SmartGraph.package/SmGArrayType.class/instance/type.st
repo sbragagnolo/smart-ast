@@ -1,0 +1,3 @@
+poliformism
+type
+	^ self

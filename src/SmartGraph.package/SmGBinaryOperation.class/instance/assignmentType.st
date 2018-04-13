@@ -1,4 +1,10 @@
 printing
 assignmentType
-	(#(> >= < <= == != !) includes: operation) ifTrue: [  ^ SmGBuiltInType bool ].
-	^ left assignmentType max: right assignmentType. 
+	| l r |
+	(#(> >= < <= == != !) includes: operation)
+		ifTrue: [ ^ SmGBuiltInType bool ].
+	l := left assignmentType.
+	r := right assignmentType.
+	l ifNil: [ ^ r ].
+	r ifNil: [ ^ l ].
+	^ l commonSuperTypeWith: r

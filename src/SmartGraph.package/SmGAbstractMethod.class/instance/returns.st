@@ -1,3 +1,3 @@
 accessing
 returns
-	^ returns ifNil: [ returns := {} ]
+	^ returns

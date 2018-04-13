@@ -1,0 +1,3 @@
+polimorfism
+lookupValue
+	^ self 

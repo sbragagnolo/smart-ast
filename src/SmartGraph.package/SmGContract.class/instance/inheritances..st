@@ -1,3 +1,3 @@
 accessing
 inheritances: aCollection
-	inheritances := aCollection
+	inheritances := aCollection ifNil: [ {} ]

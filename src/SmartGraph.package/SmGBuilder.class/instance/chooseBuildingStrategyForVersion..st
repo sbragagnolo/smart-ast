@@ -1,3 +1,4 @@
 private
-chooseBuildingStrategyForVersion: aString 
-	buildingStrategy := SmGDefaultBuildingStrategy new. 
+chooseBuildingStrategyForVersion: aString
+	buildingStrategy := SmGDefaultBuildingStrategy new.
+	buildingStrategy generalContext: generalContext

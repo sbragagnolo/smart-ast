@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "SmGBuiltInType",
+	"super" : "SmGBytes",
 	"category" : "SmartGraph-nodes",
 	"classinstvars" : [ ],
 	"pools" : [ ],

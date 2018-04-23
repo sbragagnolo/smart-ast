@@ -1,3 +1,3 @@
 accessing
 isPayable
-	^ payable isPayable
+	^ payable ifNil: [ false ] ifNotNil: [ payable isPayable ]

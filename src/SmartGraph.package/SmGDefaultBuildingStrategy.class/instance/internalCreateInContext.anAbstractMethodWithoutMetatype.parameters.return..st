@@ -17,10 +17,10 @@ internalCreateInContext: aContext anAbstractMethodWithoutMetatype: aSymbol param
 		yourself.
 	method := SmGAbstractMethod new
 		identifier: identifier;
-		privacy: (self createPrivacyModifier: #public);
+		"privacy: (self createPrivacyModifier: #public);
 		visibility: (self createVisibilityModifier: #external);
 		mutability: (self createPrivacyModifier: #mutable);
-		payable: (self createPayableModifier: #nonpayable);
+		payable: (self createPayableModifier: #nonpayable);"
 		parameters: parameters;
 		returns: return;
 		yourself.

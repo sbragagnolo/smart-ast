@@ -1,3 +1,5 @@
 printing
 modifiers
-	^ { mutability . visibility . privacy  } select: #isNotNil
+	^ {mutability.
+	visibility.
+	privacy} select: #isNotNil

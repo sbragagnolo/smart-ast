@@ -1,7 +1,7 @@
 visit statement
 visitOperationTernary: aSolOperationTernaryNode
 	| ifStatement condition ifTrue ifFalse |
-	condition := aSolOperationTernaryNode test_exp acceptVisitor: self.
+	condition := aSolOperationTernaryNode condition acceptVisitor: self.
 	ifTrue := aSolOperationTernaryNode then_statement acceptVisitor: self.
 	ifFalse := aSolOperationTernaryNode else_statement acceptVisitor: self.
 	ifStatement := buildingStrategy createStatementIf: condition ifTrue: ifTrue ifFalse: ifFalse.

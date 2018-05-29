@@ -3,7 +3,7 @@ visitFunctionalAssemblyExpression: aSolFunctionalAssemblyExpressionNode
 	| asmfn arguments |
 	arguments := aSolFunctionalAssemblyExpressionNode arguments
 		ifNil: [ {} ]
-		ifNotNil: [ :f | f exps acceptVisitor: self ].
+		ifNotNil: [ :f | f expressions acceptVisitor: self ].
 	asmfn := buildingStrategy
 		createAsmFunctionCall:
 			((aSolFunctionalAssemblyExpressionNode identifier acceptVisitor: self)

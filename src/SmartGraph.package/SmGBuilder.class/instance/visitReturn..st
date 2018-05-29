@@ -1,5 +1,5 @@
 visiting
 visitReturn: aSolReturnNode
 	^ buildingStrategy createReturn
-		return: (aSolReturnNode exp acceptVisitor: self);
+		return: (aSolReturnNode returned_expression acceptVisitor: self);
 		yourself

@@ -5,7 +5,7 @@ visitConstantDeclaration: aSolConstantDeclarationNode
 	constant := buildingStrategy createConstant: id.
 	self currentContext propertyAt: id put: constant.
 	type := aSolConstantDeclarationNode type acceptVisitor: self.
-	value := aSolConstantDeclarationNode exp acceptVisitor: self.
+	value := aSolConstantDeclarationNode expression acceptVisitor: self.
 	constant
 		type: type;
 		value: value.

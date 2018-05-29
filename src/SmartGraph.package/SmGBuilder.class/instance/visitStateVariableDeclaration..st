@@ -9,7 +9,7 @@ visitStateVariableDeclaration: aSolStateVariableDeclarationNode
 	self
 		using: property
 		define: [ property modifier: (aSolStateVariableDeclarationNode modifier acceptVisitor: self) ].
-	initialValue := aSolStateVariableDeclarationNode assign_exp acceptVisitor: self.
+	initialValue := aSolStateVariableDeclarationNode expression acceptVisitor: self.
 	property
 		type: type;
 		initialValue: initialValue.

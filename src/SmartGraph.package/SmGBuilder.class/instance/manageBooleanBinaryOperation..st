@@ -1,8 +1,8 @@
 delegate
 manageBooleanBinaryOperation: aSolOperationNode
 	| or left right |
-	left := aSolOperationNode lhs_exp acceptVisitor: self.
-	right := aSolOperationNode rhs_exp acceptVisitor: self.
+	left := aSolOperationNode lhs acceptVisitor: self.
+	right := aSolOperationNode rhs acceptVisitor: self.
 	or := buildingStrategy createBooleanBinaryOperation: aSolOperationNode operation value asSymbol.
 	or parent: self currentContext.
 	or

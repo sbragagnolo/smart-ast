@@ -1,0 +1,3 @@
+poliformism
+lookupValue
+	^ self 

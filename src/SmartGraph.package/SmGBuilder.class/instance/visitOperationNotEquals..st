@@ -1,8 +1,8 @@
 visiting operations
 visitOperationNotEquals: aSolOperationNotEqualsNode 
 	| or left right |
-	left := aSolOperationNotEqualsNode lhs_exp acceptVisitor: self.
-	right := aSolOperationNotEqualsNode rhs_exp acceptVisitor: self.
+	left := aSolOperationNotEqualsNode lhs acceptVisitor: self.
+	right := aSolOperationNotEqualsNode rhs acceptVisitor: self.
 	or := buildingStrategy createBooleanBinaryOperation: aSolOperationNotEqualsNode operation value asSymbol.
 	or parent: self currentContext .
 	or

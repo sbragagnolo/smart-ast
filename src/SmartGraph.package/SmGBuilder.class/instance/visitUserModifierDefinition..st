@@ -6,6 +6,6 @@ visitUserModifierDefinition: aSolUserModifierDefinitionNode
 	self currentContext propertyAt: identifier put: modifier.
 	self
 		using: modifier
-		define: [ aSolUserModifierDefinitionNode param_list acceptVisitor: self.
+		define: [ aSolUserModifierDefinitionNode parameters acceptVisitor: self.
 			modifier body: (aSolUserModifierDefinitionNode block acceptVisitor: self) ].
 	^ modifier

@@ -1,5 +1,5 @@
 visiting tuple
 visitTupleExpression: aSolTupleExpressionNode
 	^ buildingStrategy createTuple
-		values: (aSolTupleExpressionNode exps acceptVisitor: self);
+		values: (aSolTupleExpressionNode expressions acceptVisitor: self);
 		yourself

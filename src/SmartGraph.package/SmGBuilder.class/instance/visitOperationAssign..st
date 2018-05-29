@@ -1,8 +1,8 @@
 visiting operations
 visitOperationAssign: aSolOperationAssignNode
 	| left right assignment op |
-	left := aSolOperationAssignNode lhs_exp acceptVisitor: self.
-	right := aSolOperationAssignNode rhs_exp acceptVisitor: self.
+	left := aSolOperationAssignNode lhs acceptVisitor: self.
+	right := aSolOperationAssignNode rhs acceptVisitor: self.
 	assignment := buildingStrategy createAssignment.
 	assignment left: left.
 	aSolOperationAssignNode operation value = '='

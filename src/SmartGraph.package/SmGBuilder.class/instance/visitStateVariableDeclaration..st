@@ -1,17 +1,22 @@
 visiting  contract
 visitStateVariableDeclaration: aSolStateVariableDeclarationNode
-	| property type id initialValue |
+	| property id |
 	self assert: self currentContext isContract.
 	id := aSolStateVariableDeclarationNode identifier acceptVisitor: self.
 	property := buildingStrategy createContractProperty: id.
+	self currentContext propertyAt: id put: property.
 	property parent: self currentContext.
-	type := aSolStateVariableDeclarationNode type acceptVisitor: self.
+	property
+		type: (aSolStateVariableDeclarationNode type acceptVisitor: self).
 	self
 		using: property
-		define: [ property modifier: (aSolStateVariableDeclarationNode modifier acceptVisitor: self) ].
-	initialValue := aSolStateVariableDeclarationNode expression acceptVisitor: self.
+		define: [ | stateModifier |
+			stateModifier := aSolStateVariableDeclarationNode modifier
+				ifNil: [ self internalModifier ]
+				ifNotNil: [ :mod | mod acceptVisitor: self ].
+			property modifier: stateModifier ].
 	property
-		type: type;
-		initialValue: initialValue.
-	self currentContext propertyAt: id put: property.
-	^ property
+		initialValue:
+			(aSolStateVariableDeclarationNode expression
+				ifNil: [ nil ]
+				ifNotNil: [ :nod | nod acceptVisitor: self ])

@@ -1,6 +1,7 @@
 visit statement
 visitWhileStatement: aSolWhileStatementNode
 	| condition body while |
+	self halt.
 	while := buildingStrategy createWhileStatement.
 	while parent: self currentContext.
 	self

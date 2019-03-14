@@ -1,11 +1,10 @@
 contracts
 testMinimalLibraryIsLibrary
-	| root contract |
-	root := self
+		| program contract |
+	program := self
 		parse:
 			'library Example {
     		}'.
-	contract := root sourceunits first.
-	self assertIsToken: contract type .
-	self assert: contract type value value equals: #library.
-	self assert: contract identifier value value equals: #Example.
+	contract := program query libraries first. 
+	self assert: contract isLibrary .
+	self assert: contract identifier literalValue equals: #Example

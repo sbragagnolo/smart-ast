@@ -5,9 +5,9 @@ visitDoWhileStatement: aSolDoWhileStatementNode
 	while parent: self currentContext.
 	self
 		using: while
-		define: [ 
-			condition := aSolDoWhileStatementNode condition acceptVisitor: self.
-			body := aSolDoWhileStatementNode statement acceptVisitor: self.
+		define: [ condition := aSolDoWhileStatementNode condition acceptVisitor: self.
+			body := self
+				adaptToBodyOfControlStructure: (aSolDoWhileStatementNode statement acceptVisitor: self).
 			while condition: condition.
 			while body: body ].
 	^ while

@@ -8,6 +8,6 @@
 	"instvars" : [
 		"body"
 	],
-	"name" : "SmGUserModifier",
+	"name" : "SmGModifierUserDefined",
 	"type" : "normal"
 }

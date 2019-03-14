@@ -1,0 +1,3 @@
+visiting
+isUserDefinedModifier
+	^ true.

@@ -1,0 +1,3 @@
+testing
+isPure
+	^ value = #pure

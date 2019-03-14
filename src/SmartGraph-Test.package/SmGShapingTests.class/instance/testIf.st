@@ -1,11 +1,11 @@
 control flows
 testIf
-	| control |
-	control := self
-		parseStatement: 
+	| control method |
+	method := self
+		parseStatement:
 			'if ( 2 > 3 ) 1;
 			'.
-	self assert: (control condition isKindOf: SolOperationCompareNode).
-	self assert: (control then_statement  isKindOf: SolExpressionListNode)
-
-	
+	control := method body statements first.
+	self assert: control condition isComparison.
+	self assert: (control ifTrue isKindOf: SmGSequence).
+	self assert: control ifFalse isNil

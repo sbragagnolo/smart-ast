@@ -6,6 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "SmGUserModifierBind",
+	"name" : "SmGModifierUserDefinedBind",
 	"type" : "normal"
 }

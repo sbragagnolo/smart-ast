@@ -1,11 +1,10 @@
 contracts
 testMinimalContractIsContract
-	| root contract |
-	root := self
+	| program contract |
+	program := self
 		parse:
 			'contract Example {
     		}'.
-	contract := root sourceunits first.
-	self assertIsToken: contract type .
-	self assert: contract identifier value value equals: #Example.
-	self assert: contract type value value equals: #contract.
+	contract := program query contracts first. 
+	self assert: contract isContract.
+	self assert: contract identifier literalValue equals: #Example

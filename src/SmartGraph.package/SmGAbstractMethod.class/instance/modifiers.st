@@ -2,4 +2,5 @@ printing
 modifiers
 	^ {mutability.
 	visibility.
-	privacy} select: #isNotNil
+	privacy.
+	payable} select: #isNotNil

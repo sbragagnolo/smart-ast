@@ -1,4 +1,4 @@
-testin
+testing
 respondsTo: aSmGIdentifier and: arguments
 	| limit |
 	aSmGIdentifier literalValue = identifier literalValue

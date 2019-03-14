@@ -1,12 +1,13 @@
 functions
 testFunctionView
-	| function |
-	function := self
+	| contract method |
+	contract := self
 		parseDefinition:
 			'function f(uint8 _in) view returns (uint8 out) {
         out = _in;
     }'.
-	self assert: function modifiers size equals: 1.
-	self assertIsModifier: function modifiers first.
-	self assertIsToken: function modifiers first value.
-	self assert: function modifiers first value value equals: #view
+	method := contract methods first.
+	self assert: method modifiers size equals: 1.
+	self assert: method modifiers first isView.
+	self assert: method isView.
+	self assert: method modifiers first literalValue equals: #view

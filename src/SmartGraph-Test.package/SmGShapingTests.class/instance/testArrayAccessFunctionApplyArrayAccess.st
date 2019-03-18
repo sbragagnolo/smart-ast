@@ -3,7 +3,7 @@ testArrayAccessFunctionApplyArrayAccess
 	| var |
 	
 
-	var := self parseExpression: 'variable[1][2]()[1]'.
+	var := self parseExpression: 'variable[1][2]()[1];'.
 	" Outer array "
 	self assert: var class equals: SolIndexAccessExpressionNode.
 	self assert: var expression class equals: SolFunctionCallNode.

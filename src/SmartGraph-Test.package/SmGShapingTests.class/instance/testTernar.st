@@ -1,8 +1,9 @@
 control flows
 testTernar
-	| control |
-	control := self parseStatement: 'a ? 1:2; '.
-	control := control expressions first.
-	self assert: (control condition isKindOf: SolTermNode ).
-	self assert: (control then_statement isKindOf: SolTermNode).
-	self assert: (control else_statement isKindOf: SolTermNode)
+	| control method |
+	method := self parseStatement: '(a>1) ? 1:2; '.
+	control := method body statements first.
+	self assert: control condition isComparison.
+	self assert: (control ifTrue isKindOf: SmGSequence).
+	self assert: control ifTrue statements first isSmGLiteral.
+	self assert: control ifFalse statements first isSmGLiteral

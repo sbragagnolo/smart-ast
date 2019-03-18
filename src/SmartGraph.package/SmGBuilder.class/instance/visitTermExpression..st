@@ -1,6 +1,7 @@
 visiting - term
 visitTermExpression: aSolTermExpressionNode
 	| term prev |
+	self flag:#MaybeToErase.
 	aSolTermExpressionNode factor isArray
 		ifTrue: [ aSolTermExpressionNode factor: (aSolTermExpressionNode factor at: 2) ].
 

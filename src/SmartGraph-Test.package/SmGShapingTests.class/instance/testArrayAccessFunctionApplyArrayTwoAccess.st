@@ -1,7 +1,7 @@
 index access
 testArrayAccessFunctionApplyArrayTwoAccess
 	| var |
-	var := self parseExpression: 'variable[1][2]()[3][4]'.
+	var := self parseExpression: 'variable[1][2]()[3][4];'.
 	" Outer array [ 4 ] "
 	self assert: var class equals: SolIndexAccessExpressionNode.
 	self assert: var expression class equals: SolIndexAccessExpressionNode.

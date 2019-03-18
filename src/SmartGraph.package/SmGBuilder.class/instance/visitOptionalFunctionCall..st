@@ -1,6 +1,7 @@
 visiting - functions
 visitOptionalFunctionCall: aSolOptionalFunctionCallNode
 	| identifier call arguments |
+	self flag:#MaybeErase.
 	arguments := aSolOptionalFunctionCallNode func_args acceptVisitor: self.
 	identifier := (aSolOptionalFunctionCallNode parent factor acceptVisitor: self) asSelectorIdentifier: buildingStrategy.
 	call := buildingStrategy createFunctionCall: identifier.

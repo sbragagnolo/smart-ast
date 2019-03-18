@@ -6,7 +6,7 @@ visitBlock: aSolBlockNode
 	body parent: self currentContext.
 	self
 		using: body
-		define: [ (aSolBlockNode statements acceptVisitor: self)
+		define: [ (aSolBlockNode statements collect: [ : s | s acceptVisitor: self])
 				do: [ :s | 
 					body addStatement: s.
 					s parent: body ] ].

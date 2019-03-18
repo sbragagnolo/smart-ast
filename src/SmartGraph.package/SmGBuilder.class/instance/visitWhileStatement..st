@@ -6,8 +6,8 @@ visitWhileStatement: aSolWhileStatementNode
 	self
 		using: while
 		define: [ condition := aSolWhileStatementNode condition acceptVisitor: self.
-			body := self
-				adaptToBodyOfControlStructure: (aSolWhileStatementNode statement acceptVisitor: self).
+			body := (aSolWhileStatementNode statement acceptVisitor: self)
+				asSmGSequenceNode: buildingStrategy.
 			while condition: condition.
 			while body: body ].
 	^ while

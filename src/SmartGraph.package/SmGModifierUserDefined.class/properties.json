@@ -6,7 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"body"
+		"body",
+		"parameters"
 	],
 	"name" : "SmGModifierUserDefined",
 	"type" : "normal"

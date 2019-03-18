@@ -28,6 +28,7 @@ manageMessageSend: aSolTermExpressionNode
 
 	receiver = self currentContext
 		ifTrue: [ receiver := buildingStrategy createSelfIdentifier ].
+		self halt.
 	message := buildingStrategy createMessageSend.
 	message
 		parent: self currentContext;

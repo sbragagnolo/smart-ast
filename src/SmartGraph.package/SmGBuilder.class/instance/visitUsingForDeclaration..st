@@ -1,8 +1,11 @@
 visiting user types
 visitUsingForDeclaration: aSolUsingForDeclarationNode
 	| library typebind extendedType |
-	library := buildingStrategy createTypeBind: (aSolUsingForDeclarationNode identifier acceptVisitor: self) context: self currentContext.
-	typebind := aSolUsingForDeclarationNode type acceptVisitor: self.
+	library := buildingStrategy
+		createTypeBind: (aSolUsingForDeclarationNode identifier acceptVisitor: self)
+		context: self currentContext.
+	typebind := aSolUsingForDeclarationNode type
+		ifNotNil: [ :t | t acceptVisitor: self ].
 	typebind
 		ifNil: [ self assert: aSolUsingForDeclarationNode all value value = '*'.
 			typebind := buildingStrategy createWildcardTypeBind ].

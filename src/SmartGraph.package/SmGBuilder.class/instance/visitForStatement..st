@@ -6,7 +6,7 @@ visitForStatement: aSolForStatementNode
 	self
 		using: for
 		define: [ initialize := aSolForStatementNode initialization
-				acceptVisitor: self.
+				ifNotNil: [ :v | v acceptVisitor: self ].
 			condition := aSolForStatementNode condition acceptVisitor: self.
 			loopExpressions := aSolForStatementNode increment_list
 				acceptVisitor: self.

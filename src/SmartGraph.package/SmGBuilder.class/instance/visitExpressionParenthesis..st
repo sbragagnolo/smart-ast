@@ -4,7 +4,8 @@ visitExpressionParenthesis: aSolExpressionParenthesisNode
 		ifNil: [ aSolExpressionParenthesisNode expression acceptVisitor: self ]
 		ifNotNil: [ " Is a cast expression "
 			(aSolExpressionParenthesisNode expression factor isTypeName
-				or: [ aSolExpressionParenthesisNode expression factor isLiteralIdentifier ])
+				or:
+					[ aSolExpressionParenthesisNode expression factor isLiteralIdentifier ])
 				ifTrue: [ | cast |
 					cast := buildingStrategy createCast.
 					cast

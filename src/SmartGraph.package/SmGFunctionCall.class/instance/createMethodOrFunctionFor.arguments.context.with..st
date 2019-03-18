@@ -1,5 +1,5 @@
-delegation
-createMethodOrFunctionFor: aSolFunctionCallNode arguments: arguments context: context with: buildingStrategy
+creating
+createMethodOrFunctionFor: aSolFunctionCallNode arguments: aCollection context: context with: buildingStrategy 
 	| function  |
 	function := buildingStrategy createFunctionCall: self.
 	function

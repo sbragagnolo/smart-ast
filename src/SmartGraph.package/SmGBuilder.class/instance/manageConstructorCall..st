@@ -1,6 +1,7 @@
 visiting - term
 manageConstructorCall: aSolTermExpressionNode
 	| identifier call arguments |
+	self flag:#MaybeToErase.
 	self
 		assert:
 			(aSolTermExpressionNode children size = 3

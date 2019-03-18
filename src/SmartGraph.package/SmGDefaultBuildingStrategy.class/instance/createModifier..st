@@ -1,5 +1,5 @@
 create - modifier
 createModifier: aSmGIdentifier
-	^ SmGUserModifier new
+	^ SmGModifierUserDefined new
 		identifier: aSmGIdentifier;
 		yourself

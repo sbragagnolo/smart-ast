@@ -25,7 +25,9 @@ visitFunctionDefinition: aSolFunctionDefinitionNode
 						ifNotNil: [ :r | r acceptVisitor: self ]).
 			aSolFunctionDefinitionNode modifiers acceptVisitor: self.
 			aSolFunctionDefinitionNode block
-				ifNotNil:
-					[ method body: (aSolFunctionDefinitionNode block acceptVisitor: self) ] ].
+				ifNotNil: [ method
+						body:
+							((aSolFunctionDefinitionNode block acceptVisitor: self)
+								asSmGSequenceNode: buildingStrategy) ] ].
 	self currentContext propertyAt: identifier put: method.
 	^ method

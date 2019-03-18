@@ -5,10 +5,13 @@ visitForStatement: aSolForStatementNode
 	for parent: self currentContext.
 	self
 		using: for
-		define: [ initialize := aSolForStatementNode initialization acceptVisitor: self.
+		define: [ initialize := aSolForStatementNode initialization
+				acceptVisitor: self.
 			condition := aSolForStatementNode condition acceptVisitor: self.
-			loopExpressions := aSolForStatementNode increment_list  acceptVisitor: self.
-			body := aSolForStatementNode statement acceptVisitor: self.
+			loopExpressions := aSolForStatementNode increment_list
+				acceptVisitor: self.
+			body := (aSolForStatementNode statement acceptVisitor: self)
+				asSmGSequenceNode: buildingStrategy .
 			for initialize: initialize.
 			for condition: condition.
 			for loopExpressions: loopExpressions.

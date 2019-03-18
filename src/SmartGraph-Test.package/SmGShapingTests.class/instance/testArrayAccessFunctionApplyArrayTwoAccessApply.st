@@ -1,7 +1,7 @@
 index access
 testArrayAccessFunctionApplyArrayTwoAccessApply
 	| var |
-	var := self parseExpression: 'variable[1][2]()[3][4]()'.
+	var := self parseExpression: 'variable[1][2]()[3][4]();'.
 	self assert: var class equals: SolFunctionCallNode.
 	self assert: var expression class equals: SolIndexAccessExpressionNode.
 	self assert: var arguments expressions equals: nil.

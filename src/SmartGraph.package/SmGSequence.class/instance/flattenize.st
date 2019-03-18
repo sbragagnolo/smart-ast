@@ -1,0 +1,3 @@
+hack
+flattenize
+	self shouldBeImplemented.

@@ -1,11 +1,17 @@
 contracts
 testMinimalContractIsEmpty
-	| root contract |
-	root := self
+	| program contract |
+	program := self
 		parse:
 			'contract Example {
     		}'.
-	self assert: root sourceunits size equals: 1.
-	contract := root sourceunits first.
-	self assert: contract inheritances isEmpty.
-	self assert: contract statements isEmpty.
+	contract := program query contracts first.
+	self assert: contract inheritances size equals: 1.
+	self assert: contract properties size equals: 2.
+	"
+		Only two properties are set in an empty contract:
+		self 
+		this 
+	"
+	self
+		assert: (contract properties values allSatisfy: [ :p | p = contract ])

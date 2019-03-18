@@ -1,14 +1,12 @@
 visiting  contract
 visitInheritanceSpecifier: aSolInheritanceSpecifierNode
-	| inheritance |
+	| arguments inheritance |
 	self assert: aSolInheritanceSpecifierNode attributes isEmpty.
-	inheritance := SmGInheritance new.
-	inheritance
-		bind: (aSolInheritanceSpecifierNode behaviour acceptVisitor: self).
-	inheritance
-		arguments:
-			(aSolInheritanceSpecifierNode arguments
-				ifNil: [ {} ]
-				ifNotNil: [ aSolInheritanceSpecifierNode arguments acceptVisitor: self ]).
+	arguments := aSolInheritanceSpecifierNode arguments
+		ifNil: [ {} ]
+		ifNotNil: [ aSolInheritanceSpecifierNode arguments acceptVisitor: self ].
+	inheritance := buildingStrategy
+		createInheritance: (aSolInheritanceSpecifierNode behaviour acceptVisitor: self)
+		arguments: arguments.
 	inheritance parent: self currentContext.
 	^ inheritance

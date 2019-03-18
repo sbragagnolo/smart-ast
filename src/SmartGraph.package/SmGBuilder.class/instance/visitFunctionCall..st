@@ -1,6 +1,7 @@
 visiting
 visitFunctionCall: aSolFunctionCallNode
 	| expression receiver selector arguments message last |
+
 	expression := aSolFunctionCallNode expression acceptVisitor: self.
 	self assert: (expression isKindOf: SmGPropertyBind).
 	last := self getLastAccessOnPropertyBind: expression.

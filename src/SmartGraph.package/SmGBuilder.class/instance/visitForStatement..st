@@ -8,8 +8,8 @@ visitForStatement: aSolForStatementNode
 		define: [ initialize := aSolForStatementNode initialization
 				ifNotNil: [ :v | v acceptVisitor: self ].
 			condition := aSolForStatementNode condition acceptVisitor: self.
-			loopExpressions := aSolForStatementNode increment_list
-				acceptVisitor: self.
+			loopExpressions := (aSolForStatementNode increment_list
+				ifNil: [ {} ]) acceptVisitor: self.
 			body := (aSolForStatementNode statement acceptVisitor: self)
 				asSmGSequenceNode: buildingStrategy.
 			for initialize: initialize.

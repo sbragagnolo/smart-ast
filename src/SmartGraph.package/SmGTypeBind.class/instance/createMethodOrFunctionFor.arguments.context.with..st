@@ -2,8 +2,7 @@ creating
 createMethodOrFunctionFor: aSolFunctionCallNode arguments: aCollection context: aContext with: aSmGDefaultBuildingStrategy
 	" In this case is not a method, but a cast "
 
-	self lookupValue ifFail: [ self halt ].
-	self lookupValue isUserDefinedType
+	(self lookupValue isFail or: [ self lookupValue isUserDefinedType ])
 		ifTrue: [ | message |
 			message := aSmGDefaultBuildingStrategy createMessageSend.
 			message

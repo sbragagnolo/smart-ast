@@ -2,7 +2,7 @@ visiting
 visitFunctionTypeName: aSolFunctionTypeNameNode
 	| params return modifiers functionType bind |
 	return := aSolFunctionTypeNameNode returned_types acceptVisitor: self.
-	params := aSolFunctionTypeNameNode parameters acceptVisitor: self.
+	params := aSolFunctionTypeNameNode type_list  acceptVisitor: self.
 	functionType := buildingStrategy createFunctionType: params returning: return.
 	self using: functionType define: [ modifiers := aSolFunctionTypeNameNode modifiers acceptVisitor: self ].
 	functionType identifier: (buildingStrategy createFunctionTypeIdentifier: functionType).

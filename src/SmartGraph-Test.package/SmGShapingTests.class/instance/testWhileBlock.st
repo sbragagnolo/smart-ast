@@ -1,12 +1,13 @@
 control flows
 testWhileBlock
-	| control |
-	control := self
-		parseStatement: 
+	| method control |
+	method := self
+		parseStatement:
 			' while(1 > 2) { 
 				var ;
 			 }   '.
-	self assert: (control condition isKindOf: SolOperationCompareNode).
-	self assert: (control statement isKindOf: SolBlockNode)
-
-	
+	control := method body statements first.
+	self assert: (control condition isKindOf: SmGBinaryOperation).
+	self assert: control condition isComparison.
+	self assert: (control body isKindOf: SmGSequence).
+	self assert: control body statements size equals: 1

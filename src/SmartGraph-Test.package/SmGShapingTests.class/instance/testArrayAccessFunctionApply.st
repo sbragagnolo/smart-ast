@@ -1,15 +1,8 @@
 index access
 testArrayAccessFunctionApply
-	| var |
-	var := self parseExpression: 'variable[1][2]();'.
-	self assert: var class equals: SolFunctionCallNode.
-	self assert: var expression class equals: SolTermNode.
-	self assert: var arguments expressions equals: nil.
-	" Is an array "
-	var := var expression.
-	self assert: var class equals: SolTermNode.
-	self assert: var factor class equals: SolLiteralIdentifierNode.
-	self assert: var indexes size equals: 2.
-	self assert: (var indexes allSatisfy: [ :v | v class = SolIndexAccessNode ]).
-	self assert: (var indexes allSatisfy: [ :v | v index class = SolTermNode ]).
-	self assert: (var indexes allSatisfy: [ :v | v index factor class = SolLiteralDecimalNumberNode ])
+	| method functionCall |
+	method := self parseExpression: 'variable[1][2]();'.
+	functionCall := method body statements first.
+	self assert: functionCall identifier isBind.
+	self assert: (functionCall identifier isKindOf: SmGArrayAccess).
+	self assert: (functionCall identifier array isKindOf: SmGArrayAccess)

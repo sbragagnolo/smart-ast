@@ -1,3 +1,3 @@
 accessing
 assignmentType
-	^ self method assignmentType
+	^ self function assignmentType

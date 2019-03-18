@@ -1,0 +1,3 @@
+accessing
+isSmGArrayAccess
+	^ true

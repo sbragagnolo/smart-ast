@@ -1,3 +1,7 @@
 querying
 assignmentType
-	^ array property assignmentType innerTypeAssingmentType
+	self halt.
+^	(array isSmGArrayAccess ifTrue: [ array assignmentType  ] ifFalse: [ array property  ]).
+	
+	" array  lookupValue.
+	^ array property assignmentType innerTypeAssingmentType"

@@ -1,3 +1,3 @@
 accessing
 method
-	^ self lookupValue
+	^ self function

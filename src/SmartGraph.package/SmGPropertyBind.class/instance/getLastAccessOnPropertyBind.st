@@ -1,7 +1,7 @@
-convenience
-getLastAccessOnPropertyBind: aSmGPropertyBind
+accessing
+getLastAccessOnPropertyBind
 	| last |
-	last := aSmGPropertyBind.
+	last := self.
 	[ last identifier isIdentifier ]
 		whileFalse: [ last := last identifier ].
 	^ last

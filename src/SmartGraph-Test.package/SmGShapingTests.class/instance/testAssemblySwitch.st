@@ -4,6 +4,7 @@ testAssemblySwitch
 	block := self
 		parseAssemblyExpression:
 			'
+	int exponent;
 	assembly { 
         switch exponent
         case 0 { result := 1 }
@@ -15,23 +16,11 @@ testAssemblySwitch
         }
 }
     '.
-	self assert: block asm_block asm_items size equals: 1.
-	control := block asm_block asm_items first.
-	self assert: control expression class equals: SolLiteralIdentifierNode.
+	self assert: block body statements second statements size equals: 1.
+	control := block body statements second statements first.
+	self
+		assert: control expression literalValue
+		equals: SolLiteralIdentifierNode.
 	self assert: control cases size equals: 3.
-	
-	self assert: control cases first class equals: SolAssemblyCaseNode.
-	self assert: control cases first value class equals: SolLiteralDecimalNumberNode.
-	self assert: control cases first body class equals: SolAssemblyBlockNode.
-	self assert: control cases first defaultToken equals: nil.
-	
-	self assert: control cases second  class equals: SolAssemblyCaseNode.
-	self assert: control cases second value class equals: SolLiteralDecimalNumberNode.
-	self assert: control cases second body class equals: SolAssemblyBlockNode.
-	self assert: control cases first defaultToken equals: nil.
-	
-	self assert: control cases third class equals: SolAssemblyCaseNode.
-	self assert: control cases third value equals: nil.
-	self assert: control cases third body class equals: SolAssemblyBlockNode.
-	self assert: control cases third defaultToken value value equals: #default.
-	
+	control cases allSatisfy: [ :c | c isKindOf: SmGAsmCase ].
+	control cases anySatisfy: [ :c | c value = #defaultValue ]

@@ -1,8 +1,9 @@
 assembly
 testAssemblyBlock
-	| block |
-	block := self
+	| block method |
+	method := self
 		parseAssemblyExpression:
 			'
 	  	assembly { }'.
-	self assert: block asm_block class equals: SolAssemblyBlockNode
+	block := method body statements first.
+	self assert: (block isKindOf: SmGAsmSequence)

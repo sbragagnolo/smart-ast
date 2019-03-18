@@ -1,6 +1,6 @@
 visiting asm
 visitAssemblyLocalBinding: aSolAssemblyLocalBindingNode
-	| variable id initialValue |
+	| variable id  |
 	id := (aSolAssemblyLocalBindingNode lhs acceptVisitor: self) asAsmIdentifier: buildingStrategy.
 	id parent: self currentContext.
 	variable := buildingStrategy createAsmVariable: id.

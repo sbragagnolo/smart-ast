@@ -9,9 +9,12 @@ testAssemblyFunction
        
     }
 	}'.
-	self assert: block asm_block asm_items size equals: 1.
-	fn := block asm_block asm_items first.
-	self assert: fn parameters class equals: SolAssemblyExpressionListNode.
-	self assert: fn parameters expressions size equals: 2.
-	self assert: fn body class equals: SolAssemblyBlockNode.
-	self assert: fn identifier class equals: SolLiteralIdentifierNode.
+	self assert: block body statements first statements size equals: 1.
+	fn := block body statements first statements first.
+	self assert: fn parameters size equals: 2.
+	self
+		assert:
+			(fn parameters
+				allSatisfy: [ :p | p type lookupValue typename = #uint256 ]).
+	self assert: fn body class equals: SmGAsmSequence.
+	self assert: fn identifier class equals: SmGMethodIdentifier

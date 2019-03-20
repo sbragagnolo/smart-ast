@@ -1,4 +1,4 @@
 generated test
 testblockjack
 <expectedFailure>
-	^ self parseTest: (SmGContractsContents new blockjack).	
+	^ self parseTest: SmGContractsContents new blockjack

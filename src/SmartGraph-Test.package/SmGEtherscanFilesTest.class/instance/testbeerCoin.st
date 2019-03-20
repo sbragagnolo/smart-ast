@@ -1,4 +1,4 @@
 generated test
 testbeerCoin
-	<expectedFailure>
+<expectedFailure>
 	^ self parseTest: SmGContractsContents new beerCoin

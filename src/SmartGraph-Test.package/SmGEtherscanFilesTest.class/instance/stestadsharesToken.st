@@ -1,4 +1,4 @@
 generated test
-testadsharesToken
-	<expectedFailure>
+stestadsharesToken
+	<expectedFailures>
 	^ self parseTest: SmGContractsContents new adsharesToken

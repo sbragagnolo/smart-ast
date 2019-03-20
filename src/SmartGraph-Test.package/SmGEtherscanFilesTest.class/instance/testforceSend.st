@@ -1,3 +1,4 @@
 generated test
 testforceSend
-	^ self parseTest: (SmGContractsContents new forceSend).	
+	<expectedFailure>
+	^ self parseTest: SmGContractsContents new forceSend

@@ -10,4 +10,4 @@ printParameters: parameters
 			stream nextPutAll: ', ' ].
 	parameters last type acceptVisitor: self.
 	stream nextPutAll: ' '.
-	parameters last identifier acceptVisitor: self
+	parameters last identifier ifNotNil: [ :i | i acceptVisitor: self ]

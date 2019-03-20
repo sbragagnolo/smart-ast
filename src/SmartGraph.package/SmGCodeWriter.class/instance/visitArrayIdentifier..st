@@ -1,3 +1,3 @@
 visiting
 visitArrayIdentifier: aArrayIdentifier
-	^ self shouldBeImplemented 
+	stream nextPutAll: aArrayIdentifier privateValue

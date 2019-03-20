@@ -1,3 +1,4 @@
 visiting
 visitAsmSequence: aAsmSequence
-	^ self shouldBeImplemented 
+	stream nextPutAll: 'assembly '.
+	self visitSequence: aAsmSequence

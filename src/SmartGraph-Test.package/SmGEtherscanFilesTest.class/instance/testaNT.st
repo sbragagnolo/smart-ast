@@ -1,3 +1,3 @@
 generated test
 testaNT
-	^ self parseTest: (SmGContractsContents new aNT).	
+	^ self parseTest: SmGContractsContents new aNT

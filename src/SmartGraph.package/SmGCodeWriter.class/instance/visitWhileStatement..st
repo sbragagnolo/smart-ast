@@ -1,3 +1,6 @@
 visiting
 visitWhileStatement: aWhileStatement
-	^ self shouldBeImplemented 
+	stream nextPutAll: 'while ('.
+	aWhileStatement condition acceptVisitor: self.
+	stream nextPutAll: ')'.
+	aWhileStatement body acceptVisitor: self

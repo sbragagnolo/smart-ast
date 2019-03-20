@@ -3,5 +3,5 @@ visitSolidityProgram: aSmGSolidityProgram
 	| content | 
 	content := String new.
 	stream := content writeStream.
-	aSmGSolidityProgram properties acceptVisitor: self.
+	aSmGSolidityProgram properties values acceptVisitor: self.
 	^ stream contents 

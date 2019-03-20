@@ -1,0 +1,3 @@
+testing
+isEmptyOrNil
+	^ values isEmptyOrNil

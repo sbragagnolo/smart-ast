@@ -1,3 +1,6 @@
 visiting
 visitPrefixOperation: aPrefixOperation
-	^ self shouldBeImplemented 
+	stream
+		nextPutAll: aPrefixOperation operation;
+		nextPutAll: ' '.
+	aPrefixOperation expression acceptVisitor: self

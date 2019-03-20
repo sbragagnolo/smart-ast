@@ -18,9 +18,6 @@ testAssemblySwitch
     '.
 	self assert: block body statements second statements size equals: 1.
 	control := block body statements second statements first.
-	self
-		assert: control expression literalValue
-		equals: SolLiteralIdentifierNode.
 	self assert: control cases size equals: 3.
 	control cases allSatisfy: [ :c | c isKindOf: SmGAsmCase ].
 	control cases anySatisfy: [ :c | c value = #defaultValue ]

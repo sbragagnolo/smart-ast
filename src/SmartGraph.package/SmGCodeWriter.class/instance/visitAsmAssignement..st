@@ -1,3 +1,5 @@
 visiting
 visitAsmAssignement: aAsmAssignement
-	^ self shouldBeImplemented 
+	aAsmAssignement left acceptVisitor: self.
+	stream nextPutAll: ' := '.
+	aAsmAssignement right acceptVisitor: self

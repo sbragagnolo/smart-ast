@@ -1,7 +1,9 @@
 visiting
 visitMessageSend: aMessageSend
 	| args |
-	(aMessageSend receiver isIdentifier and: [ aMessageSend receiver literalValue = #self ])
+	(aMessageSend receiver = aMessageSend parent
+		or: [ aMessageSend receiver isIdentifier
+				and: [ aMessageSend receiver literalValue = #self ] ])
 		ifFalse: [ aMessageSend receiver acceptVisitor: self.
 			stream nextPutAll: '.' ].
 	aMessageSend identifier acceptVisitor: self.

@@ -1,3 +1,3 @@
 visiting
 visitAsmFunctionCall: aAsmFunctionCall
-	^ self shouldBeImplemented 
+	^ self visitFunctionCall:  aAsmFunctionCall

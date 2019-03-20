@@ -1,3 +1,5 @@
 visiting
 visitEtherAmountLiteral: aEtherAmountLiteral
-	^ self shouldBeImplemented 
+	aEtherAmountLiteral value acceptVisitor: self. 
+	stream nextPutAll:' '.
+	aEtherAmountLiteral unit acceptVisitor: self. 

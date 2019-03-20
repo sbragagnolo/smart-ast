@@ -1,4 +1,4 @@
-visiting statements
+visiting assembly
 visitAssemblyCase: aSolAssemblyCaseNode
 	| case |
 	case := buildingStrategy

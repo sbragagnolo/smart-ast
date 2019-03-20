@@ -1,4 +1,4 @@
-visiting
+visiting variables
 visitPragmaDirective: aSolPragmaDirectiveNode
 	version
 		ifNil: [ self assert: aSolPragmaDirectiveNode pragmaToken value = #pragma.

@@ -1,4 +1,4 @@
-visiting type names
+visiting types
 visitElementaryTypeName: aSolElementaryTypeNameNode
 	| id type |
 	id := buildingStrategy createIdentifier: aSolElementaryTypeNameNode type value asSymbol.

@@ -1,4 +1,4 @@
-visiting
+visiting - functions
 visitFunctionCall: aSolFunctionCallNode
 	| expression |
 	expression := aSolFunctionCallNode expression acceptVisitor: self.

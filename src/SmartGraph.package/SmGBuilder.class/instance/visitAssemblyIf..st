@@ -1,6 +1,6 @@
-ASM
+visiting assembly
 visitAssemblyIf: aSolAssemblyIfNode
-	| ifStatement condition ifTrue ifFalse |
+	| ifStatement condition ifTrue |
 	condition := aSolAssemblyIfNode condition acceptVisitor: self.
 	ifTrue := (aSolAssemblyIfNode block acceptVisitor: self)
 		asSmGSequenceNode: buildingStrategy.

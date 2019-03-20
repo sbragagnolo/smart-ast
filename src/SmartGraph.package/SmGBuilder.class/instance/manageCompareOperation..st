@@ -1,4 +1,4 @@
-delegate
+convenience
 manageCompareOperation: aSolOperationCompareNode 
 | or left right |
 	left := aSolOperationCompareNode lhs acceptVisitor: self.

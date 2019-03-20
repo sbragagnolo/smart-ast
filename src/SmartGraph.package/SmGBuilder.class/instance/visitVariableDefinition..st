@@ -1,4 +1,4 @@
-visiting
+visiting variables
 visitVariableDefinition: aSolVariableDefinitionNode
 	| variable type ids initialValue |
 	self assert: self currentContext isContract not.

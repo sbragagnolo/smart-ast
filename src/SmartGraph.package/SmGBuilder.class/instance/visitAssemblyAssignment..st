@@ -1,4 +1,4 @@
-visiting asm
+visiting assembly
 visitAssemblyAssignment: aSolAssemblyAssignmentNode
 	| left right assignement |
 	left := aSolAssemblyAssignmentNode lhs acceptVisitor: self.

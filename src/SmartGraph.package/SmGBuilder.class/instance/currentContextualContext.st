@@ -1,3 +1,3 @@
-as yet unclassified
+accessing
 currentContextualContext
 	^ (stack select: #isContextualNode) first

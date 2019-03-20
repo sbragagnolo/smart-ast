@@ -1,4 +1,4 @@
-visiting user types
+visiting types
 visitUsingForDeclaration: aSolUsingForDeclarationNode
 	| library typebind extendedType |
 	library := buildingStrategy

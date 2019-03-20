@@ -1,4 +1,4 @@
-visiting
+visiting - functions
 visitFunctionTypeName: aSolFunctionTypeNameNode
 	| params return functionType bind |
 	return := aSolFunctionTypeNameNode returned_types acceptVisitor: self.

@@ -1,4 +1,4 @@
-visiting
+visiting variables
 visitTerm: aSolTermNode
 	| first identifier |
 	identifier := aSolTermNode factor acceptVisitor: self.

@@ -1,4 +1,4 @@
-visiting
+visiting - functions
 visitReturn: aSolReturnNode
 	^ buildingStrategy createReturn
 		return:

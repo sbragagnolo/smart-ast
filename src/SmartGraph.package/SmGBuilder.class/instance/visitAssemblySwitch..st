@@ -1,4 +1,4 @@
-visiting
+visiting assembly
 visitAssemblySwitch: aSolAssemblySwitchNode
 	| switch expression |
 	expression := (aSolAssemblySwitchNode expression acceptVisitor: self) .

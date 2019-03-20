@@ -1,4 +1,4 @@
-visiting type definition
+visiting types
 visitEnumDefinition: aSolEnumDefinitionNode
 	| enum |
 	enum := buildingStrategy createEnumDefinition: (aSolEnumDefinitionNode identifier acceptVisitor: self).

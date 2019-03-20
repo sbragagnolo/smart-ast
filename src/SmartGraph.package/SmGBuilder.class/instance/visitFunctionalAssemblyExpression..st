@@ -1,4 +1,4 @@
-visiting asm
+visiting assembly
 visitFunctionalAssemblyExpression: aSolFunctionalAssemblyExpressionNode
 	| asmfn arguments |
 	arguments := aSolFunctionalAssemblyExpressionNode arguments

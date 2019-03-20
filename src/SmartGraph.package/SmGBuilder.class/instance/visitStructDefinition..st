@@ -1,4 +1,4 @@
-visiting user types
+visiting types
 visitStructDefinition: aSolStructDefinitionNode
 	| struct |
 	struct := buildingStrategy createStruct: (aSolStructDefinitionNode identifier acceptVisitor: self).

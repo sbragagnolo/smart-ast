@@ -1,4 +1,4 @@
-visiting type names
+visiting types
 visitMappingTypeName: aSolMappingTypeNameNode
 	| key value type |
 	key := aSolMappingTypeNameNode key_type acceptVisitor: self.

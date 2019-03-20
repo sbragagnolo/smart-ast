@@ -1,4 +1,4 @@
-delegate
+convenience
 manageArrayAccess: aKindOfArray index: aSubindexExpression
 	| arrayAccess |
 	arrayAccess := buildingStrategy createArrayAccess.

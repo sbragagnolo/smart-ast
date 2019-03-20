@@ -1,4 +1,4 @@
-visiting
+visiting - literals
 visitLiteralNestedIdentifier: aSolLiteralNestedIdentifierNode
 	^ aSolLiteralNestedIdentifierNode identifiers
 		inject: self currentContext

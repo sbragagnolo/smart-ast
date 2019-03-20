@@ -1,4 +1,4 @@
-visiting
+visiting variables
 visitIndexedParameter: aSolIndexedParameterNode
 	| type identifier |
 	type := aSolIndexedParameterNode type acceptVisitor: self.

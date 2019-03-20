@@ -1,4 +1,4 @@
-visiting
+visiting variables
 visitVariableDeclaration: aSolVariableDeclarationNode
 	| property type id storage |
 	id := aSolVariableDeclarationNode identifier acceptVisitor: self.

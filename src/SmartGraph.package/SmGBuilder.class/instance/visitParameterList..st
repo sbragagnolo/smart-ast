@@ -1,4 +1,4 @@
-visiting
+visiting - functions
 visitParameterList: aSolParameterListNode
 	^ (1 to: aSolParameterListNode parameters size)
 		collect: [ :idx | 

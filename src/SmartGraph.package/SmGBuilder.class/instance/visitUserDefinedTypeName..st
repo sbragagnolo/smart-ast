@@ -1,4 +1,4 @@
-visiting user types
+visiting types
 visitUserDefinedTypeName: aSolUserDefinedTypeNameNode
 	^ buildingStrategy
 		createTypeBind: (aSolUserDefinedTypeNameNode value acceptVisitor: self)

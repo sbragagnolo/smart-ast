@@ -1,4 +1,4 @@
-visiting
+visiting variables
 visitMemberAccess: aSolMemberAccessNode
 	| expression returning |
 	expression := aSolMemberAccessNode expression acceptVisitor: self.

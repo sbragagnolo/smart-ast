@@ -1,4 +1,4 @@
-as yet unclassified
+convenience
 using: aContext define: aBlock
 	| return parent |
 	stack push: aContext.

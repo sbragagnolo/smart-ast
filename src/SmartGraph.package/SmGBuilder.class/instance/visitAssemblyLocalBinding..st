@@ -1,4 +1,4 @@
-visiting asm
+visiting assembly
 visitAssemblyLocalBinding: aSolAssemblyLocalBindingNode
 	| variable id  |
 	id := (aSolAssemblyLocalBindingNode lhs acceptVisitor: self) asAsmIdentifier: buildingStrategy.

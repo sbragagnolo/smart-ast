@@ -1,4 +1,4 @@
-visiting
+visiting assembly
 visitAssemblyBlock: aSolAssemblyBlockNode
 	| body |
 	body := buildingStrategy createAsmSequence.

@@ -1,4 +1,4 @@
-visiting
+visiting assembly
 visitAssemmblyFunctionDefinition: aSolAssemmblyFunctionDefinitionNode
 	| method identifier parameters |
 	parameters := aSolAssemmblyFunctionDefinitionNode parameters

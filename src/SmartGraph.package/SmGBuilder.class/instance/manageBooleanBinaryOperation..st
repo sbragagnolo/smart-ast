@@ -1,4 +1,4 @@
-delegate
+convenience
 manageBooleanBinaryOperation: aSolOperationNode
 	| or left right |
 	left := aSolOperationNode lhs acceptVisitor: self.

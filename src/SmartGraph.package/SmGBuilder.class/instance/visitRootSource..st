@@ -1,4 +1,4 @@
-visiting
+visiting variables
 visitRootSource: aSolRootSourceNode
 	| program |
 	"http://solidity.readthedocs.io/en/v0.4.21/units-and-global-variables.html"

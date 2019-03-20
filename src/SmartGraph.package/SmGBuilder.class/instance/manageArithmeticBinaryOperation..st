@@ -1,4 +1,4 @@
-delegate
+convenience
 manageArithmeticBinaryOperation: anSolOperationNode
 	| operation left right |
 	left := anSolOperationNode lhs acceptVisitor: self.

@@ -1,3 +1,3 @@
-visiting
+visiting - literals
 visitLiteralHexaString: aSolLiteralHexaStringNode
 	^ buildingStrategy createHexaStringLiteral: aSolLiteralHexaStringNode value value

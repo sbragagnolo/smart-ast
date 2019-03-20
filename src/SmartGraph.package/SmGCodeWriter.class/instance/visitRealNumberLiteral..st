@@ -1,3 +1,3 @@
 visiting
 visitRealNumberLiteral: aRealNumberLiteral
-	^ self shouldBeImplemented 
+	stream nextPutAll: aRealNumberLiteral literalValue asString

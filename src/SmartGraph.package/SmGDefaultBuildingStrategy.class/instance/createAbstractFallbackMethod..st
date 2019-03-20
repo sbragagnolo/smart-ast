@@ -1,8 +1,8 @@
 creating - methods
-createFallbackMethod: aSmGIdentifier
+createAbstractFallbackMethod: aSmGIdentifier
 	^ self
 		configure:
-			(SmGMethod new
+			(SmGAbstractMethod new
 				identifier:
 					(self
 						createMethodIdentifier: ('{1}>>Fallback' format: {aSmGIdentifier literalValue})

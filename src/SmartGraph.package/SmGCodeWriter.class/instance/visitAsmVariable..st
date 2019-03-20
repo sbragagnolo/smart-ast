@@ -1,3 +1,6 @@
 visiting
 visitAsmVariable: aAsmVariable
-	^ self shouldBeImplemented 
+	stream nextPutAll: 'let '.
+	aAsmVariable identifier acceptVisitor: self.
+	stream nextPutAll: ' = '.
+	aAsmVariable initialValue acceptVisitor: self

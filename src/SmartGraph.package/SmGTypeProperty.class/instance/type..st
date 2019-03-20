@@ -1,3 +1,4 @@
 accessing
-type: aCollection 
-	type := aCollection
+type: anObject 
+	(anObject isKindOf: SmGBuilder ) ifTrue: [ self halt ].
+	type := anObject

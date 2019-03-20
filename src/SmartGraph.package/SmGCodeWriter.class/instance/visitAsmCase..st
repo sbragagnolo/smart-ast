@@ -1,3 +1,6 @@
 visiting
 visitAsmCase: aAsmCase
-	^ self shouldBeImplemented 
+	aAsmCase value acceptVisitor: self.
+	stream nextPutAll: ' '.
+	aAsmCase body acceptVisitor: self.
+	

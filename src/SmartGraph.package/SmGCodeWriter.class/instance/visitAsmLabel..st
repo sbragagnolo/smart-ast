@@ -1,3 +1,4 @@
 visiting
 visitAsmLabel: aAsmLabel
-	^ self shouldBeImplemented 
+	aAsmLabel identifier acceptVisitor: self.
+	stream nextPut: $:

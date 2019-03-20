@@ -1,3 +1,4 @@
 generated test
 testdeed
-	^ self parseTest: (SmGContractsContents new deed).	
+	<expectedFailure>
+	^ self parseTest: SmGContractsContents new deed

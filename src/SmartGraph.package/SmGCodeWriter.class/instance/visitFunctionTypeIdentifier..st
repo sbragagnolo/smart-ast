@@ -1,3 +1,3 @@
 visiting
 visitFunctionTypeIdentifier: aFunctionTypeIdentifier
-	^ self shouldBeImplemented 
+	stream nextPutAll: aFunctionTypeIdentifier literalValue

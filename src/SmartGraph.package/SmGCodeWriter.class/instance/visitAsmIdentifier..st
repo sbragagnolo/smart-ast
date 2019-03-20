@@ -1,3 +1,3 @@
 visiting
 visitAsmIdentifier: aAsmIdentifier
-	^ self shouldBeImplemented 
+	^ self visitIdentifier: aAsmIdentifier

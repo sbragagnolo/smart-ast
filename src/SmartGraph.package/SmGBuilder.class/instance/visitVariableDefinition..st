@@ -7,8 +7,7 @@ visitVariableDefinition: aSolVariableDefinitionNode
 	initialValue := aSolVariableDefinitionNode assign_expression
 		acceptVisitor: self.
 	type := buildingStrategy
-		createTypeBind: #var
-		context: self currentContext.
+		createVarTypeBindFromContext: self currentContext.
 	^ ids
 		collect: [ :id | 
 			variable := buildingStrategy createVariable: id type: type.

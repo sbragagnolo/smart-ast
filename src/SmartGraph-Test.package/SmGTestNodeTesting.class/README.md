@@ -1,1 +1,0 @@
-This tests ensure that all the  nodes resultant are SmartGraphNodes 

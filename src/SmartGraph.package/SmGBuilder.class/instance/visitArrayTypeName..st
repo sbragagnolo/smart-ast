@@ -2,8 +2,7 @@ visiting types
 visitArrayTypeName: aSolArrayTypeNameNode
 	| innerType type identifier bind |
 	innerType := aSolArrayTypeNameNode type acceptVisitor: self.
-	identifier := innerType identifier
-		asArrayIdentifierAt: buildingStrategy.
+	identifier := innerType identifier asArrayIdentifierAt: buildingStrategy .
 	bind := buildingStrategy
 		createTypeBind: identifier
 		context: innerType innerParent.

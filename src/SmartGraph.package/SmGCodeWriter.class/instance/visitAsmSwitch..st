@@ -1,3 +1,6 @@
 visiting
 visitAsmSwitch: aAsmSwitch
-	^ self shouldBeImplemented 
+	stream nextPutAll: ' switch '.
+	aAsmSwitch expression acceptVisitor: self.
+	aAsmSwitch cases acceptVisitor: self.
+	

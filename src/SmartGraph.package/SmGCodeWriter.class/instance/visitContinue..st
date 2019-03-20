@@ -1,3 +1,3 @@
 visiting
 visitContinue: aContinue
-	^ self shouldBeImplemented 
+	stream nextPutAll: 'continue'

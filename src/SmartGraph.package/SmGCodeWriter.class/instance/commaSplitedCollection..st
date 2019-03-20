@@ -1,5 +1,6 @@
 processing
 commaSplitedCollection: aCollection
+	aCollection ifNil: [ ^ self ].
 	aCollection
 		allButLastDo: [ :a | 
 			a acceptVisitor: self.

@@ -1,0 +1,3 @@
+collection
+last
+	^ values last

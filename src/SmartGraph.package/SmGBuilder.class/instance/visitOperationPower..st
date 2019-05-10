@@ -1,0 +1,3 @@
+visiting operations
+visitOperationPower: aSolOperationPowerNode 
+	^ self manageArithmeticBinaryOperation: aSolOperationPowerNode

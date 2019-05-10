@@ -1,0 +1,3 @@
+printing
+isConstructorIdentifier
+	^ true

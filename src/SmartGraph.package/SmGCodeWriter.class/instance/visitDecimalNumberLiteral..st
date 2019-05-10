@@ -1,0 +1,3 @@
+visiting
+visitDecimalNumberLiteral: aDecimalNumberLiteral
+	stream nextPutAll: aDecimalNumberLiteral literalValue asString

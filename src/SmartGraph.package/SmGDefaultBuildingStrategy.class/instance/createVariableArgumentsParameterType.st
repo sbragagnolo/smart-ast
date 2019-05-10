@@ -1,0 +1,3 @@
+creating
+createVariableArgumentsParameterType
+	^ SmGVariableArgumentsParameter new 

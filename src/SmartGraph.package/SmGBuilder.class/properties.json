@@ -1,0 +1,18 @@
+{
+	"commentStamp" : "SantiagoBragagnolo 3/7/2018 12:51",
+	"super" : "Object",
+	"category" : "SmartGraph-builder",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"generalContext",
+		"stack",
+		"buildingStrategy",
+		"code",
+		"version",
+		"ret"
+	],
+	"name" : "SmGBuilder",
+	"type" : "normal"
+}

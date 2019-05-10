@@ -1,0 +1,3 @@
+visiting
+isAsm
+	^ true 

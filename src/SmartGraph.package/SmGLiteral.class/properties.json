@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "SmGLeafNode",
+	"category" : "SmartGraph-nodes",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"type"
+	],
+	"name" : "SmGLiteral",
+	"type" : "normal"
+}

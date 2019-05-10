@@ -1,0 +1,3 @@
+visiting boolean
+visitOperationBitShift: aSolOperationBitShiftNode
+	^ self manageArithmeticBinaryOperation: aSolOperationBitShiftNode

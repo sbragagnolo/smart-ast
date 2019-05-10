@@ -1,0 +1,3 @@
+creating
+var
+	^ SmGDynamicVarType new 

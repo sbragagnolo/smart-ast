@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "SmGOperation",
+	"category" : "SmartGraph-nodes",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"left",
+		"right"
+	],
+	"name" : "SmGBinaryOperation",
+	"type" : "normal"
+}

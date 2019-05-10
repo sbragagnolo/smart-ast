@@ -1,0 +1,3 @@
+creating
+createForStatement
+	^ SmGForStatement new 

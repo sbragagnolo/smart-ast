@@ -1,0 +1,3 @@
+polimorifsm
+innerType
+	^ value 

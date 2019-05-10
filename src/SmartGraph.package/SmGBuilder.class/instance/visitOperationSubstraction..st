@@ -1,0 +1,3 @@
+visiting operations
+visitOperationSubstraction: aSolOperationSubstractionNode 
+	^ self manageArithmeticBinaryOperation: aSolOperationSubstractionNode

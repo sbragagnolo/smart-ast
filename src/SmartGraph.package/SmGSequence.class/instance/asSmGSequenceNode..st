@@ -1,0 +1,3 @@
+accessing
+asSmGSequenceNode: aStrategy
+	^ self

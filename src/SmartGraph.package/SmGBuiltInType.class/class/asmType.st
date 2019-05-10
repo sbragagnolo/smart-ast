@@ -1,0 +1,3 @@
+typing
+asmType
+	^ self uint

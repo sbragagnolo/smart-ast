@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "SmGAssignement",
+	"category" : "SmartGraph-nodes",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SmGAsmAssignement",
+	"type" : "normal"
+}

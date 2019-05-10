@@ -1,0 +1,3 @@
+visiting
+visitModifierBuiltIn: aModifierBuiltIn
+	stream nextPutAll: aModifierBuiltIn literalValue

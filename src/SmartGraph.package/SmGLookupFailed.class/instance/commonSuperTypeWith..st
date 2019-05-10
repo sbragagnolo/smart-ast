@@ -1,0 +1,3 @@
+accessing
+commonSuperTypeWith: aType
+	^ aType

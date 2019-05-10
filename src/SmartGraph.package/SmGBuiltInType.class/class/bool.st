@@ -1,0 +1,3 @@
+creating
+bool
+	^ SmGBoolean new 

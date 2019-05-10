@@ -1,0 +1,3 @@
+testing
+isConstructorIdentifier
+	^ false 

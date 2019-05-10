@@ -1,0 +1,3 @@
+printing
+assignmentType
+	^ expression assignmentType

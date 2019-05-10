@@ -1,0 +1,3 @@
+printing
+commonSuperTypeWith: anOtherType
+	^ anOtherType 

@@ -1,0 +1,3 @@
+visiting
+visitFunctionTypeIdentifier: aFunctionTypeIdentifier
+	stream nextPutAll: aFunctionTypeIdentifier literalValue

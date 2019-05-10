@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "SmGFunctionCall",
+	"category" : "SmartGraph-nodes",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"receiver"
+	],
+	"name" : "SmGMessageSend",
+	"type" : "normal"
+}

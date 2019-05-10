@@ -1,0 +1,3 @@
+creating
+createContinue
+	^ SmGContinue new

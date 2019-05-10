@@ -1,0 +1,20 @@
+{
+	"commentStamp" : "",
+	"super" : "SmGContextIdentifiedNode",
+	"category" : "SmartGraph-nodes",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"privacy",
+		"visibility",
+		"mutability",
+		"parameters",
+		"payable",
+		"returns",
+		"userModifiers",
+		"type"
+	],
+	"name" : "SmGAbstractMethod",
+	"type" : "normal"
+}

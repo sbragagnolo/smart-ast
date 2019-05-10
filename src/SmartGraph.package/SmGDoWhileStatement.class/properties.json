@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "SmGWhileStatement",
+	"category" : "SmartGraph-nodes",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SmGDoWhileStatement",
+	"type" : "normal"
+}

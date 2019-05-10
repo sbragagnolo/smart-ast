@@ -1,0 +1,3 @@
+visiting
+visitRealNumberLiteral: aRealNumberLiteral
+	stream nextPutAll: aRealNumberLiteral literalValue asString

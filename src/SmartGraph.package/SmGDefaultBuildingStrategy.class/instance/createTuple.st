@@ -1,0 +1,3 @@
+creating
+createTuple
+	^ SmGTuple new 

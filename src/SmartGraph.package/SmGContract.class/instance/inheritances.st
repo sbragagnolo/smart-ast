@@ -1,0 +1,3 @@
+accessing
+inheritances
+	^ inheritances ifNil: [ {} ]

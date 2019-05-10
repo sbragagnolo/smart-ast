@@ -1,0 +1,3 @@
+converting
+asArrayIdentifierAt: aSmGDefaultBuildingStrategy
+	^ aSmGDefaultBuildingStrategy createArrayIdentifier: value

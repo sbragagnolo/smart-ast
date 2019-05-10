@@ -1,0 +1,3 @@
+visiting
+visitBooleanLiteral: aBooleanLiteral
+	stream nextPutAll: aBooleanLiteral literalValue asString

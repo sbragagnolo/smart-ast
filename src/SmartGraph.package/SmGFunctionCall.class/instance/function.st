@@ -1,0 +1,3 @@
+accessing
+function
+	^ self lookupValue.

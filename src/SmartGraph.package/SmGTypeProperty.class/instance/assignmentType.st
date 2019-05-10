@@ -1,0 +1,3 @@
+accessing
+assignmentType
+	^ type assignmentType

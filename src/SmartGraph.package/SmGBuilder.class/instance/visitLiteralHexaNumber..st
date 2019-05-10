@@ -1,0 +1,3 @@
+visiting - literals
+visitLiteralHexaNumber: aSolLiteralHexaNumberNode
+	^ buildingStrategy createDecimalNumberLiteral: aSolLiteralHexaNumberNode value value

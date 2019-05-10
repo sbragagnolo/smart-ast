@@ -1,0 +1,3 @@
+testing
+isSmGArrayAccess
+	^ false

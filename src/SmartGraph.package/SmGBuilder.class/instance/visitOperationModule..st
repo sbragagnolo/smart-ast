@@ -1,0 +1,3 @@
+visiting operations
+visitOperationModule: aSolOperationModuleNode
+	^ self manageArithmeticBinaryOperation: aSolOperationModuleNode

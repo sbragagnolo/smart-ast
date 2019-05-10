@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "SmGContextualNode",
+	"category" : "SmartGraph-nodes",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SmGModifierPlaceHolder",
+	"type" : "normal"
+}

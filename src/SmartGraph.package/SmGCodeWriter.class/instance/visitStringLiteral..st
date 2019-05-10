@@ -1,0 +1,3 @@
+visiting
+visitStringLiteral: aStringLiteral
+	stream nextPutAll: aStringLiteral literalValue

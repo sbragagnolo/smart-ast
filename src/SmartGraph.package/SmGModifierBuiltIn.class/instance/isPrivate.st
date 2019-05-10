@@ -1,0 +1,3 @@
+testing
+isPrivate
+	^ value = #private 

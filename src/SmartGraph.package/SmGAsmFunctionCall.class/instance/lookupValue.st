@@ -1,0 +1,3 @@
+visiting
+lookupValue
+	^ SmGLookupFailed instance 

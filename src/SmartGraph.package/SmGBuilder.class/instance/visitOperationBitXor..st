@@ -1,0 +1,3 @@
+visiting boolean
+visitOperationBitXor: aSolOperationBitXorNode
+	^ self manageBooleanBinaryOperation: aSolOperationBitXorNode

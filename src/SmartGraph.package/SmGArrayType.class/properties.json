@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "SmGIdentifiedNode",
+	"category" : "SmartGraph-nodes",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"innerType"
+	],
+	"name" : "SmGArrayType",
+	"type" : "normal"
+}

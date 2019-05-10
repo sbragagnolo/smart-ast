@@ -1,0 +1,3 @@
+looping
+type
+	^ self 

@@ -1,0 +1,3 @@
+visiting
+visitMethodIdentifier: aMethodIdentifier
+	stream nextPutAll: aMethodIdentifier literalValue

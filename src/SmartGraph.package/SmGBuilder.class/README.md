@@ -1,0 +1,1 @@
+This is a stack visitor for SmaCC Solidity AST that assembles a SmartGraph ASG. 

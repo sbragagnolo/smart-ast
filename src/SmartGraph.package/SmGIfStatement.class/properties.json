@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "SmGContextualNode",
+	"category" : "SmartGraph-nodes",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"condition",
+		"ifTrue",
+		"ifFalse",
+		"isTernary"
+	],
+	"name" : "SmGIfStatement",
+	"type" : "normal"
+}

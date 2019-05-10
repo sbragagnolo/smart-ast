@@ -1,0 +1,3 @@
+visiting
+visitArrayIdentifier: aArrayIdentifier
+	stream nextPutAll: aArrayIdentifier privateValue

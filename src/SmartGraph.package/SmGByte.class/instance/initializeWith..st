@@ -1,0 +1,3 @@
+printing
+initializeWith: anInitializer
+	" nothing "

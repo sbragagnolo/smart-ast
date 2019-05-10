@@ -1,0 +1,3 @@
+creating
+createDoWhileStatement
+	^ SmGDoWhileStatement new 

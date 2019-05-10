@@ -1,0 +1,3 @@
+base 64 content
+base64incrementer1
+	^'cHJhZ21hIHNvbGlkaXR5XjAuNC4xMTsNCg0KY29udHJhY3QgSW5jcmVtZW50ZXIgew0KICAgIHVpbnQgcHVibGljIGk7DQogICAgZnVuY3Rpb24gaW5jKCkgew0KICAgICAgICBpKys7DQogICAgfQ0KfQ=='

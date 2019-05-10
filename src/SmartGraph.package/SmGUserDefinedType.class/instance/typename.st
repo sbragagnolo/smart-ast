@@ -1,0 +1,3 @@
+accessing
+typename
+	^ identifier literalValue

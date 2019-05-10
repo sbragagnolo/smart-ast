@@ -1,0 +1,3 @@
+initialization
+setAsTernary
+	isTernary := true 

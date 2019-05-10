@@ -1,0 +1,3 @@
+creating
+address
+	^ SmGTypeAddress new 

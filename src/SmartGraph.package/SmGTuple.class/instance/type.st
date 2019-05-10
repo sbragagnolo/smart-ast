@@ -1,0 +1,3 @@
+polimorfism
+type
+	^ self 

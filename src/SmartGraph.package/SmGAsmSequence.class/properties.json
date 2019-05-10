@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "SmGSequence",
+	"category" : "SmartGraph-nodes",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SmGAsmSequence",
+	"type" : "normal"
+}
